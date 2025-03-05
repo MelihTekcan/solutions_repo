@@ -11,9 +11,9 @@ R = (v0**2 * np.sin(2* aci_radian)) / g
 
 plt.figure(figsize=(10, 6))
 plt.plot(aci_degree, R, label=f'v₀ = {v0} m/s, g = {g} m/s²')
-plt.xlabel(‘Shooting Angle (degrees)’)
-plt.ylabel(‘Range (metres)’)
-plt.title(‘Range vs. Angle of Fire’)
+plt.xlabel("Shooting Angle (degrees)")
+plt.ylabel("Range (metres)")
+plt.title("Range vs. Angle of Fire")
 plt.grid(True)
 plt.legend()
 plt.show()
