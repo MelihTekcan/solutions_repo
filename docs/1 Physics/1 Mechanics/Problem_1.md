@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Range calculation function
+# Function to calculate the range of a projectile
 def projectile_range(v0, theta_deg, g=9.81, h=0):
     theta = np.radians(theta_deg)
     if h == 0:
@@ -10,7 +10,7 @@ def projectile_range(v0, theta_deg, g=9.81, h=0):
         t_flight = (v0 * np.sin(theta) + np.sqrt((v0 * np.sin(theta))**2 + 2 * g * h)) / g
         return v0 * np.cos(theta) * t_flight
 
-# Trajectory calculation function
+# Function to calculate the trajectory of a projectile
 def trajectory(v0, theta_deg, g=9.81, h=0):
     theta = np.radians(theta_deg)
     t_flight = (v0 * np.sin(theta) + np.sqrt((v0 * np.sin(theta))**2 + 2 * g * h)) / g
@@ -20,9 +20,9 @@ def trajectory(v0, theta_deg, g=9.81, h=0):
     return x, y
 
 # Parameters
-v0_values = [10, 20, 30]  # m/s
-g_values = [9.81, 1.62]   # Earth, Moon
-h_values = [0, 10]        # m
+v0_values = [10, 20, 30]  # Initial velocities (m/s)
+g_values = [9.81, 1.62]   # Gravitational accelerations (Earth, Moon)
+h_values = [0, 10]        # Initial heights (m)
 theta_deg = np.linspace(0, 90, 91)
 
 # Plot 1: Range vs. Angle
@@ -53,7 +53,6 @@ ax2.set_ylabel("Height (m)")
 ax2.set_title(f"Trajectories (v₀={v0} m/s, g={g} m/s², h={h} m)")
 ax2.legend()
 ax2.grid(True)
-ax2.set_ylim(bottom_ylim)
 fig2.savefig("trajectories.png", dpi=300, bbox_inches="tight")
 plt.close(fig2)
 
