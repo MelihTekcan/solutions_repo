@@ -173,7 +173,7 @@
 <div class="section" itemprop="articleBody">
 <p>import numpy as np
 import matplotlib.pyplot as plt</p>
-<h1 id="range-calculation-function">Range calculation function</h1>
+<h1 id="function-to-calculate-the-range-of-a-projectile">Function to calculate the range of a projectile</h1>
 <p>def projectile_range(v0, theta_deg, g=9.81, h=0):
     theta = np.radians(theta_deg)
     if h == 0:
@@ -181,7 +181,7 @@ import matplotlib.pyplot as plt</p>
     else:
         t_flight = (v0 * np.sin(theta) + np.sqrt((v0 * np.sin(theta))</strong>2 + 2 * g * h)) / g
         return v0 * np.cos(theta) * t_flight</p>
-<h1 id="trajectory-calculation-function">Trajectory calculation function</h1>
+<h1 id="function-to-calculate-the-trajectory-of-a-projectile">Function to calculate the trajectory of a projectile</h1>
 <p>def trajectory(v0, theta_deg, g=9.81, h=0):
     theta = np.radians(theta_deg)
     t_flight = (v0 * np.sin(theta) + np.sqrt((v0 * np.sin(theta))<strong>2 + 2 * g * h)) / g
@@ -190,9 +190,9 @@ import matplotlib.pyplot as plt</p>
     y = h + v0 * np.sin(theta) * t - 0.5 * g * t</strong>2
     return x, y</p>
 <h1 id="parameters">Parameters</h1>
-<p>v0_values = [10, 20, 30]  # m/s
-g_values = [9.81, 1.62]   # Earth, Moon
-h_values = [0, 10]        # m
+<p>v0_values = [10, 20, 30]  # Initial velocities (m/s)
+g_values = [9.81, 1.62]   # Gravitational accelerations (Earth, Moon)
+h_values = [0, 10]        # Initial heights (m)
 theta_deg = np.linspace(0, 90, 91)</p>
 <h1 id="plot-1-range-vs-angle">Plot 1: Range vs. Angle</h1>
 <p>fig1, ax1 = plt.subplots(figsize=(12, 8))
@@ -221,7 +221,6 @@ ax2.set_ylabel("Height (m)")
 ax2.set_title(f"Trajectories (v₀={v0} m/s, g={g} m/s², h={h} m)")
 ax2.legend()
 ax2.grid(True)
-ax2.set_ylim(bottom_ylim)
 fig2.savefig("trajectories.png", dpi=300, bbox_inches="tight")
 plt.close(fig2)</p>
 <p>print("Plots saved as 'range_vs_angle.png' and 'trajectories.png'.")</p>

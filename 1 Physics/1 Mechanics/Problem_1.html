@@ -33,32 +33,19 @@
     <h2>1. Theoretical Foundation</h2>
     <p>Projectile motion is governed by Newton’s laws under constant gravitational acceleration. The key equations are derived as follows:</p>
     <ul>
-        <li><b>Horizontal Motion</b>: No acceleration, so \( x(t) = v_0 \cos\theta \cdot t \).</li>
-        <li><b>Vertical Motion</b>: Acceleration \( a_y = -g \), yielding \( y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 \).</li>
-        <li><b>Time of Flight</b>: Solve \( y(t) = 0 \):
-            <ul>
-                <li>For \( h = 0 \): \( t = \frac{2 v_0 \sin\theta}{g} \).</li>
-                <li>For \( h > 0 \): \( t = \frac{v_0 \sin\theta + \sqrt{(v_0 \sin\theta)^2 + 2 g h}}{g} \).</li>
-            </ul>
-        </li>
-        <li><b>Range</b>:
-            <ul>
-                <li>For \( h = 0 \): \( R = \frac{v_0^2 \sin 2\theta}{g} \).</li>
-                <li>For \( h > 0 \): \( R = v_0 \cos\theta \cdot t \) with the above \( t \).</li>
-            </ul>
-        </li>
+        <li><b>Horizontal Motion</b>: \( x(t) = v_0 \cos\theta \cdot t \)</li>
+        <li><b>Vertical Motion</b>: \( y(t) = h + v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 \)</li>
+        <li><b>Range</b>: \( R = \frac{v_0^2 \sin 2\theta}{g} \) for \( h = 0 \)</li>
     </ul>
-    <p>This forms a family of solutions parameterized by initial velocity (\( v_0 \)), angle (\( \theta \)), gravity (\( g \)), and height (\( h \)).</p>
 
     <h2>2. Analysis of the Range</h2>
     <p>The range depends heavily on the angle of projection, as shown below:</p>
     <img src="range_vs_angle.png" alt="Range vs Angle Plot">
     <p><b>Key Observations:</b></p>
     <ul>
-        <li><b>Angle Dependence</b>: Maximum range occurs at 45° when \( h = 0 \), where \( \sin 2\theta = 1 \).</li>
-        <li><b>Velocity Effect</b>: \( R \propto v_0^2 \), so doubling \( v_0 \) quadruples the range.</li>
-        <li><b>Gravity Effect</b>: \( R \propto \frac{1}{g} \), e.g., range on the Moon (\( g = 1.62 \, \text{m/s}^2 \)) is ~6 times that on Earth.</li>
-        <li><b>Height Effect</b>: Non-zero \( h \) increases flight time, shifting the optimal angle slightly below 45°.</li>
+        <li>Maximum range occurs at 45° for \( h = 0 \).</li>
+        <li>Higher initial velocity increases the range quadratically.</li>
+        <li>Lower gravity (e.g., on the Moon) significantly extends the range.</li>
     </ul>
 
     <h2>3. Practical Applications</h2>
@@ -66,22 +53,22 @@
     <img src="trajectories.png" alt="Trajectories Plot">
     <p><b>Real-World Examples:</b></p>
     <ul>
-        <li><b>Sports</b>: In basketball, players use \( \theta \approx 50^\circ \) due to hoop height; golf uses lower angles with spin.</li>
-        <li><b>Engineering</b>: Artillery adjusts for elevation and terrain slope.</li>
-        <li><b>Astrophysics</b>: On Mars (\( g = 3.72 \, \text{m/s}^2 \)), ranges are 2.6 times longer than on Earth.</li>
+        <li><b>Sports</b>: Basketball players use angles around 50° for optimal shots.</li>
+        <li><b>Engineering</b>: Artillery adjusts for elevation and terrain.</li>
+        <li><b>Astrophysics</b>: On Mars, ranges are longer due to lower gravity.</li>
     </ul>
 
     <h2>4. Limitations and Extensions</h2>
     <p>This idealized model assumes:</p>
     <ul>
-        <li>No air resistance: Real projectiles experience drag (\( F_d = -k v^2 \)), requiring numerical solutions.</li>
-        <li>Flat terrain: Uneven surfaces need adjusted landing conditions.</li>
-        <li>No wind: Lateral forces would alter \( v_{0x} \).</li>
+        <li>No air resistance: Real projectiles experience drag.</li>
+        <li>Flat terrain: Uneven surfaces require adjustments.</li>
+        <li>No wind: Wind alters the horizontal motion.</li>
     </ul>
     <p><b>Extensions:</b></p>
     <ul>
-        <li>Use numerical methods (e.g., Runge-Kutta) to include drag.</li>
-        <li>Simulate variable \( g \) for high-altitude trajectories.</li>
+        <li>Include air resistance using numerical methods.</li>
+        <li>Simulate variable gravity for high-altitude trajectories.</li>
     </ul>
 </body>
 </html>
