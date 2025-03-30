@@ -95,7 +95,7 @@ v0 = 20
 theta = np.deg2rad(45)
 t_flight = (2 * v0 * np.sin(theta)) / g
 t = np.linspace(0, t_flight, 100)
-x = v0 * np.cos(theta) * t
+x = v0 * np.cos(theta) * ts
 y = v0 * np.sin(theta) * t - 0.5 * g * t**2
 
 plt.figure(figsize=(10, 6))
