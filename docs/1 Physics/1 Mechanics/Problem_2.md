@@ -90,51 +90,53 @@ Let’s simulate this with Python using **SciPy’s solve_ivp**. Below, we’ll 
 ### Regular Motion Simulation
 Here’s the simulation with moderate forcing (A = 1.2):
 
-```{python}
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
+# Define the forced damped pendulum equation
 def forced_damped_pendulum(t, y, b, m, g, L, A, omega):
-    theta, omega_dot = y
+    theta, omega_dot = y  # y[0] = theta, y[1] = angular velocity
     dtheta_dt = omega_dot
-    domega_dt = -(b/m) * omega_dot - (g/L) * np.sin(theta) + A * np.cos(omega * t)
+    domega_dt = -(b/m) * omega_dot - (g/L) * np.sin(theta) + (A/m) * np.cos(omega * t)
     return [dtheta_dt, domega_dt]
 
 # Parameters
 m = 1.0  # Mass (kg)
 b = 0.5  # Damping coefficient
-g = 9.81 # Gravity (m/s²)
-L = 1.0  # Length (m)
+g = 9.81  # Gravity (m/s²)
+L = 1.0  # Length of pendulum (m)
 A = 1.2  # Forcing amplitude
 omega = 1.5  # Forcing frequency
-y0 = [np.pi / 4, 0]  # Initial angle = 45°, velocity = 0
+y0 = [np.pi / 4, 0]  # Initial angle = 45°, initial angular velocity = 0
 
 # Time setup
-t_span = (0, 20)
-t_eval = np.linspace(*t_span, 1000)
+t_span = (0, 20)  # Simulate for 20 seconds
+t_eval = np.linspace(*t_span, 1000)  # Time points for evaluation
 
-# Solve
+# Solve the differential equation
 sol = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval, args=(b, m, g, L, A, omega))
 
-# Plotting
+# Plotting the results
 plt.figure(figsize=(12, 8))
 
-# Time series
+# Time series plot (angle vs. time)
 plt.subplot(2, 1, 1)
 plt.plot(sol.t, sol.y[0], label="Angle (θ)")
 plt.xlabel("Time (s)")
 plt.ylabel("Angle (rad)")
 plt.title("Regular Motion of a Forced Damped Pendulum (A = 1.2)")
 plt.legend()
+plt.grid(True)
 
-# Phase diagram
+# Phase diagram (angle vs. angular velocity)
 plt.subplot(2, 1, 2)
 plt.plot(sol.y[0], sol.y[1], label="Phase Space")
 plt.xlabel("Angle (θ)")
 plt.ylabel("Angular Velocity (ω)")
 plt.title("Phase Diagram")
 plt.legend()
+plt.grid(True)
 
 plt.tight_layout()
 plt.show()
