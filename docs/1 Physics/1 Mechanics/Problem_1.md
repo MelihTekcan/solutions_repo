@@ -71,9 +71,8 @@ The range $$R$$ depends on:
 The following Python code generates a graph showing how the range varies with the angle of projection for different initial velocities:
 
 ```bash
-python Problem_1simulation.py
-
----
+python sim1.py
+```
 
 ## 3. Practical Applications
 
