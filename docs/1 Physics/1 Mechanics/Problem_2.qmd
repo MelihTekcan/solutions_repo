@@ -1,3 +1,8 @@
+#---
+title: "Problem 2:"
+format: html
+---
+
 # Problem 2
 
 ## Investigating the Dynamics of a Forced Damped Pendulum
@@ -12,16 +17,14 @@ A **forced damped pendulum** is a fascinating physical system that reveals how s
 
 The motion of a forced damped pendulum is governed by the following differential equation:
 
-$$
-\frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
-$$
+$$ \frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t) $$
 
 Where:
-- $$\theta$$: Angle from vertical (in radians).
-- $$\frac{d^2\theta}{dt^2}$$: Angular acceleration.
-- $$\frac{b}{m} \frac{d\theta}{dt}$$: Damping force proportional to angular velocity.
-- $$\frac{g}{L} \sin(\theta)$$: Restoring force due to gravity.
-- $$A \cos(\omega t)$$: External forcing term.
+- $$ \theta $$: Angle from vertical (in radians).
+- $$ \frac{d^2\theta}{dt^2} $$: Angular acceleration.
+- $$ \frac{b}{m} \frac{d\theta}{dt} $$: Damping force proportional to angular velocity.
+- $$ \frac{g}{L} \sin(\theta) $$: Restoring force due to gravity.
+- $$ A \cos(\omega t) $$: External forcing term.
 
 ---
 
@@ -31,7 +34,10 @@ Below is the Python code to simulate the motion of the forced damped pendulum. T
 1. A time series plot showing the angle of the pendulum over time.
 2. A phase diagram showing the relationship between angle and angular velocity.
 
-```python
+### Regular Motion Simulation
+This simulation uses a moderate forcing amplitude (A = 1.2):
+
+```{python}
 # Import necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
@@ -82,18 +88,4 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
-plt.show()
-
-# Experiment: Simulate chaotic motion with larger forcing amplitude
-A_chaos = 5.0  # Larger forcing amplitude for chaos
-sol_chaos = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval, args=(b, m, g, L, A_chaos, omega))
-
-# Plot chaotic motion
-plt.figure(figsize=(10, 6))
-plt.plot(sol_chaos.t, sol_chaos.y[0], label="Chaotic Motion (A = 5.0)")
-plt.xlabel("Time (s)")
-plt.ylabel("Angle (rad)")
-plt.title("Chaotic Motion of a Forced Damped Pendulum")
-plt.legend()
-plt.grid(True)
 plt.show()
