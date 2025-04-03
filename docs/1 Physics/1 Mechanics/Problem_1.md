@@ -70,10 +70,10 @@ The range $$R$$ depends on:
 
 The following Python code generates a graph showing how the range varies with the angle of projection for different initial velocities:
 
+
 ```bash
 python sim1.py
 ```
-
 ## 3. Practical Applications
 
 ### Real-World Scenarios
@@ -158,3 +158,4 @@ plt.title('Projectile Trajectory')
 plt.legend()
 plt.grid(True)
 plt.show()
+```
