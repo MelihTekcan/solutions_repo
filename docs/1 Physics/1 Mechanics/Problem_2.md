@@ -90,6 +90,9 @@ Let’s simulate this with Python using **SciPy’s solve_ivp**. Below, we’ll 
 ### Regular Motion Simulation
 Here’s the simulation with moderate forcing (A = 1.2):
 
+
+
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
@@ -140,4 +143,5 @@ plt.grid(True)
 
 plt.tight_layout()
 plt.show()
-'''
+
+```
