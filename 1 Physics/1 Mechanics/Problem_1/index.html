@@ -308,21 +308,24 @@
 <hr/>
 <h2 id="4-implementation">4. Implementation</h2>
 <p>The following Python script simulates and visualizes the range and trajectory of a projectile. It calculates the range for various angles of projection and plots the trajectory for a specific case.</p>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="parameters">Parameters</h1>
-<p>g = 9.8  # Acceleration due to gravity (m/s^2)
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+g = 9.8  # Acceleration due to gravity (m/s^2)
 v0_values = [10, 20, 30]  # Initial velocities (m/s)
 theta_deg = np.linspace(0, 90, 91)  # Angles from 0° to 90°
-theta_rad = np.deg2rad(theta_deg)</p>
-<h1 id="range-function">Range function</h1>
-<p>def range_projectile(v0, theta, g):
-    return (v0**2 * np.sin(2 * theta)) / g</p>
-<h1 id="compute-ranges-for-different-initial-velocities">Compute ranges for different initial velocities</h1>
-<p>ranges = {v0: range_projectile(v0, theta_rad, g) for v0 in v0_values}</p>
-<h1 id="plot-range-vs-angle">Plot Range vs Angle</h1>
-<p>plt.figure(figsize=(10, 6))
+theta_rad = np.deg2rad(theta_deg)
+
+# Range function
+def range_projectile(v0, theta, g):
+    return (v0**2 * np.sin(2 * theta)) / g
+
+# Compute ranges for different initial velocities
+ranges = {v0: range_projectile(v0, theta_rad, g) for v0 in v0_values}
+
+# Plot Range vs Angle
+plt.figure(figsize=(10, 6))
 for v0, R in ranges.items():
     plt.plot(theta_deg, R, label=f'v0 = {v0} m/s')
 plt.xlabel('Angle of Projection (degrees)')
@@ -330,24 +333,28 @@ plt.ylabel('Range (meters)')
 plt.title('Range vs. Angle of Projection')
 plt.legend()
 plt.grid(True)
-plt.show()</p>
-<h1 id="trajectory-for-v0-20-ms-and-45">Trajectory for v0 = 20 m/s and θ = 45°</h1>
-<p>v0 = 20  # Initial velocity (m/s)
+plt.show()
+
+# Trajectory for v0 = 20 m/s and θ = 45°
+v0 = 20  # Initial velocity (m/s)
 theta = np.deg2rad(45)  # Launch angle (radians)
 t_flight = (2 * v0 * np.sin(theta)) / g  # Total flight time
-t = np.linspace(0, t_flight, 100)  # Time intervals</p>
-<h1 id="compute-trajectory">Compute trajectory</h1>
-<p>x = v0 * np.cos(theta) * t  # Horizontal position
-y = v0 * np.sin(theta) * t - 0.5 * g * t**2  # Vertical position</p>
-<h1 id="plot-trajectory">Plot trajectory</h1>
-<p>plt.figure(figsize=(10, 6))
+t = np.linspace(0, t_flight, 100)  # Time intervals
+
+# Compute trajectory
+x = v0 * np.cos(theta) * t  # Horizontal position
+y = v0 * np.sin(theta) * t - 0.5 * g * t**2  # Vertical position
+
+# Plot trajectory
+plt.figure(figsize=(10, 6))
 plt.plot(x, y, label='Trajectory (v0 = 20 m/s, θ = 45°)')
 plt.xlabel('Horizontal Distance (m)')
 plt.ylabel('Height (m)')
 plt.title('Projectile Trajectory')
 plt.legend()
 plt.grid(True)
-plt.show()</p>
+plt.show()
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
