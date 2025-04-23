@@ -66,6 +66,42 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-wave">What is a Wave?</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#key-properties-of-waves">Key Properties of Waves</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mathematical-description-of-a-wave">Mathematical Description of a Wave</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">Problem Statement</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#questions-to-solve">Questions to Solve:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#step-by-step-solution">Step-by-Step Solution</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-amplitude-a">1. Amplitude ((\(A\)\))</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-wavelength-lambda">2. Wavelength ((\(\lambda\)\))</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-frequency-f">3. Frequency ((\(f\)\))</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-wave-speed-v">4. Wave Speed ((\(v\)\))</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-direction-of-wave-propagation">5. Direction of Wave Propagation</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#final-answers">Final Answers</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-applications-of-wave-motion">Practical Applications of Wave Motion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wave-simulation-using-python">Wave Simulation Using Python</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +208,175 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>Wave motion is a fundamental concept in physics that describes how energy is transferred through a medium without the transport of matter. Waves are all around us—whether it’s the sound we hear, the light we see, or the ripples on a pond. This problem focuses on understanding the basic principles of wave motion, including the mathematical description of waves, their properties, and their behavior in different scenarios.</p>
+<hr/>
+<h2 id="what-is-a-wave"><strong>What is a Wave?</strong></h2>
+<p>A wave is a disturbance that travels through a medium, transferring energy from one point to another. Waves can be classified into two main types:</p>
+<ol>
+<li><strong>Mechanical Waves</strong>: Require a medium to propagate (e.g., sound waves, water waves).</li>
+<li><strong>Electromagnetic Waves</strong>: Do not require a medium and can travel through a vacuum (e.g., light, radio waves).</li>
+</ol>
+<hr/>
+<h2 id="key-properties-of-waves"><strong>Key Properties of Waves</strong></h2>
+<p>To understand wave motion, we need to define some key properties:</p>
+<ol>
+<li>
+<p><strong>Wavelength (<span class="arithmatex">(<span class="arithmatex">\(\lambda\)</span>\)</span>)</strong>: The distance between two consecutive points in phase on a wave (e.g., crest to crest or trough to trough). Measured in meters (m).</p>
+</li>
+<li>
+<p><strong>Frequency (<span class="arithmatex">(<span class="arithmatex">\(f\)</span>\)</span>)</strong>: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).</p>
+</li>
+<li>
+<p><strong>Period (<span class="arithmatex">(<span class="arithmatex">\(T\)</span>\)</span>)</strong>: The time it takes for one complete wave cycle to pass a point. Related to frequency by:
+   $$
+   T = \frac{1}{f}
+   $$</p>
+</li>
+<li>
+<p><strong>Wave Speed (<span class="arithmatex">(<span class="arithmatex">\(v\)</span>\)</span>)</strong>: The speed at which the wave propagates through the medium. Related to wavelength and frequency by:
+   $$
+   v = f \lambda
+   $$</p>
+</li>
+<li>
+<p><strong>Amplitude (<span class="arithmatex">(<span class="arithmatex">\(A\)</span>\)</span>)</strong>: The maximum displacement of the wave from its equilibrium position. Determines the wave’s energy.</p>
+</li>
+</ol>
+<hr/>
+<h2 id="mathematical-description-of-a-wave"><strong>Mathematical Description of a Wave</strong></h2>
+<p>The general equation for a traveling wave is:</p>
+<div class="arithmatex">\[
+y(x, t) = A \sin(kx - \omega t + \phi)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(y(x, t)\)</span>: Displacement of the wave at position <span class="arithmatex">\(x\)</span> and time <span class="arithmatex">\(t\)</span>.
+- <span class="arithmatex">\(A\)</span>: Amplitude of the wave.
+- <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>: Wave number (spatial frequency).
+- <span class="arithmatex">\(\omega = 2\pi f\)</span>: Angular frequency (temporal frequency).
+- <span class="arithmatex">\(\phi\)</span>: Phase constant, which determines the wave’s initial position.</p>
+<hr/>
+<h2 id="problem-statement"><strong>Problem Statement</strong></h2>
+<p>A wave traveling along a string is described by the equation:</p>
+<div class="arithmatex">\[
+y(x, t) = 0.05 \sin(4\pi x - 20\pi t)
+\]</div>
+<p>Where:
+<span class="arithmatex">\(y(x, t)\)</span> is in meters,
+- <span class="arithmatex">\(x\)</span> is in meters,
+- <span class="arithmatex">\(t\)</span> is in seconds.</p>
+<h3 id="questions-to-solve"><strong>Questions to Solve:</strong></h3>
+<ol>
+<li>What is the amplitude of the wave?</li>
+<li>What is the wavelength of the wave?</li>
+<li>What is the frequency of the wave?</li>
+<li>What is the speed of the wave?</li>
+<li>What is the direction of wave propagation?</li>
+</ol>
+<hr/>
+<h2 id="step-by-step-solution"><strong>Step-by-Step Solution</strong></h2>
+<h3 id="1-amplitude-a"><strong>1. Amplitude (<span class="arithmatex">(<span class="arithmatex">\(A\)</span>\)</span>)</strong></h3>
+<p>The amplitude is the coefficient of the sine function. From the equation:
+$$
+A = 0.05 \, \text{m}
+$$</p>
+<h3 id="2-wavelength-lambda"><strong>2. Wavelength (<span class="arithmatex">(<span class="arithmatex">\(\lambda\)</span>\)</span>)</strong></h3>
+<p>The wave number <span class="arithmatex">\(<span class="arithmatex">\(k\)</span>\)</span> is related to the wavelength by:
+$$
+k = \frac{2\pi}{\lambda}
+$$
+From the equation, <span class="arithmatex">\(<span class="arithmatex">\(k = 4\pi\)</span>\)</span>. Solving for <span class="arithmatex">\(<span class="arithmatex">\(\lambda\)</span>\)</span>:
+$$
+\lambda = \frac{2\pi}{k} = \frac{2\pi}{4\pi} = 0.5 \, \text{m}
+$$</p>
+<h3 id="3-frequency-f"><strong>3. Frequency (<span class="arithmatex">(<span class="arithmatex">\(f\)</span>\)</span>)</strong></h3>
+<p>The angular frequency <span class="arithmatex">\(<span class="arithmatex">\(\omega\)</span>\)</span> is related to the frequency by:
+$$
+\omega = 2\pi f
+$$
+From the equation, <span class="arithmatex">\(<span class="arithmatex">\(\omega = 20\pi\)</span>\)</span>. Solving for <span class="arithmatex">\(<span class="arithmatex">\(f\)</span>\)</span>:
+$$
+f = \frac{\omega}{2\pi} = \frac{20\pi}{2\pi} = 10 \, \text{Hz}
+$$</p>
+<h3 id="4-wave-speed-v"><strong>4. Wave Speed (<span class="arithmatex">(<span class="arithmatex">\(v\)</span>\)</span>)</strong></h3>
+<p>The wave speed is given by:
+$$
+v = f \lambda
+$$
+Substitute <span class="arithmatex">\(<span class="arithmatex">\(f = 10 \, \text{Hz}\)</span>\)</span> and <span class="arithmatex">\(<span class="arithmatex">\(\lambda = 0.5 \, \text{m}\)</span>\)</span>:
+$$
+v = 10 \times 0.5 = 5 \, \text{m/s}
+$$</p>
+<h3 id="5-direction-of-wave-propagation"><strong>5. Direction of Wave Propagation</strong></h3>
+<p>The wave equation is of the form:
+$$
+y(x, t) = A \sin(kx - \omega t)
+$$
+The negative sign in <span class="arithmatex">\(<span class="arithmatex">\(kx - \omega t\)</span>\)</span> indicates the wave is traveling in the <strong>positive x-direction</strong>.</p>
+<hr/>
+<h2 id="final-answers"><strong>Final Answers</strong></h2>
+<ol>
+<li><strong>Amplitude</strong>: <span class="arithmatex">\(<span class="arithmatex">\(0.05 \, \text{m}\)</span>\)</span> </li>
+<li><strong>Wavelength</strong>: <span class="arithmatex">\(<span class="arithmatex">\(0.5 \, \text{m}\)</span>\)</span> </li>
+<li><strong>Frequency</strong>: <span class="arithmatex">\(<span class="arithmatex">\(10 \, \text{Hz}\)</span>\)</span> </li>
+<li><strong>Wave Speed</strong>: <span class="arithmatex">\(<span class="arithmatex">\(5 \, \text{m/s}\)</span>\)</span> </li>
+<li><strong>Direction</strong>: Positive x-direction.</li>
+</ol>
+<hr/>
+<h2 id="practical-applications-of-wave-motion"><strong>Practical Applications of Wave Motion</strong></h2>
+<ol>
+<li><strong>Communication</strong>: Radio and television signals use electromagnetic waves to transmit information.</li>
+<li><strong>Seismology</strong>: Understanding wave motion helps scientists study earthquakes and the Earth’s interior.</li>
+<li><strong>Medical Imaging</strong>: Ultrasound waves are used to create images of internal body structures.</li>
+<li><strong>Music</strong>: Sound waves are the basis of musical instruments and acoustics.</li>
+</ol>
+<hr/>
+<h2 id="wave-simulation-using-python"><strong>Wave Simulation Using Python</strong></h2>
+<p>To visualize wave motion, we can use Python to simulate the propagation of a wave. Below is the code to create an animated wave:</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# Wave parameters
+A = 0.05  # Amplitude (m)
+k = 4 * np.pi  # Wave number (rad/m)
+omega = 20 * np.pi  # Angular frequency (rad/s)
+lambda_ = 2 * np.pi / k  # Wavelength (m)
+f = omega / (2 * np.pi)  # Frequency (Hz)
+v = f * lambda_  # Wave speed (m/s)
+
+# Spatial and temporal domains
+x = np.linspace(0, 2, 500)  # Position (m)
+t = np.linspace(0, 1, 100)  # Time (s)
+
+# Wave function
+def wave(x, t):
+    return A * np.sin(k * x - omega * t)
+
+# Create a figure for the animation
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.set_xlim(0, 2)
+ax.set_ylim(-A * 1.5, A * 1.5)
+ax.set_xlabel("Position (m)")
+ax.set_ylabel("Displacement (m)")
+ax.set_title("Wave Propagation")
+line, = ax.plot([], [], lw=2)
+
+# Animation function
+def update(frame):
+    y = wave(x, t[frame])
+    line.set_data(x, y)
+    return line,
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=len(t), interval=50, blit=True)
+
+# Show the animation
+plt.show()
+</code></pre>
+<hr/>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>This problem demonstrates how to analyze a wave using its mathematical description. By identifying key properties such as amplitude, wavelength, frequency, and speed, we gain a deeper understanding of wave behavior. These principles are not only essential in physics but also have wide-ranging applications in technology, medicine, and engineering. Additionally, the Python simulation provides a visual representation of wave propagation, enhancing our comprehension of wave motion.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
