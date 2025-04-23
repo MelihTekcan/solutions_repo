@@ -228,11 +228,11 @@
 <p>The motion is governed by:</p>
 <div class="arithmatex">\[ \frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t) \]</div>
 <p>Here’s what each term means:
-- $$ \theta $$ : Angle from vertical (in radians—e.g., 0 is straight down, $$ \pi/2 $$ is horizontal).
-- $$ \frac{d^2\theta}{dt^2} $$ : Angular acceleration—how fast the swinging speeds up or slows down.
-- $$ \frac{b}{m} \frac{d\theta}{dt} $$ : Damping force—friction proportional to speed ($$ \frac{d\theta}{dt} $$ is angular velocity).
-- $$ \frac{g}{L} \sin(\theta) $$ : Restoring force—gravity pulling the pendulum back (g = 9.81 m/s², L = length).
-- $$ A \cos(\omega t) $$ : External forcing—A is the push strength, $$ \omega $$ is the push frequency.</p>
+- $ \theta $ : Angle from vertical (in radians—e.g., 0 is straight down, $ \pi/2 $ is horizontal).
+- $ \frac{d^2\theta}{dt^2} $ : Angular acceleration—how fast the swinging speeds up or slows down.
+- $ \frac{b}{m} \frac{d\theta}{dt} $ : Damping force—friction proportional to speed ($ \frac{d\theta}{dt} $ is angular velocity).
+- $ \frac{g}{L} \sin(\theta) $ : Restoring force—gravity pulling the pendulum back ($ g = 9.81 \, \text{m/s}^2 $, $ L $ = length).
+- $ A \cos(\omega t) $ : External forcing—$ A $ is the push strength, $ \omega $ is the push frequency.</p>
 <p>This equation is <strong>nonlinear</strong> because of $$ \sin(\theta) $$, meaning exact solutions are tough. It’s like a recipe with a tricky ingredient!</p>
 <h3 id="22-small-angle-approximation">2.2. Small-Angle Approximation</h3>
 <p>For small swings (e.g., $$ \theta &lt; 0.1 $$ radians, about 6°), $$ \sin(\theta) \approx \theta $$. This simplifies the equation to:</p>
