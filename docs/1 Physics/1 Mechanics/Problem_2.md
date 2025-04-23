@@ -28,11 +28,11 @@ The motion is governed by:
 $$ \frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t) $$
 
 Here’s what each term means:
-- $$ \theta $$ : Angle from vertical (in radians—e.g., 0 is straight down, $$ \pi/2 $$ is horizontal).
-- $$ \frac{d^2\theta}{dt^2} $$ : Angular acceleration—how fast the swinging speeds up or slows down.
-- $$ \frac{b}{m} \frac{d\theta}{dt} $$ : Damping force—friction proportional to speed ($$ \frac{d\theta}{dt} $$ is angular velocity).
-- $$ \frac{g}{L} \sin(\theta) $$ : Restoring force—gravity pulling the pendulum back (g = 9.81 m/s², L = length).
-- $$ A \cos(\omega t) $$ : External forcing—A is the push strength, $$ \omega $$ is the push frequency.
+- $ \theta $ : Angle from vertical (in radians—e.g., 0 is straight down, $ \pi/2 $ is horizontal).
+- $ \frac{d^2\theta}{dt^2} $ : Angular acceleration—how fast the swinging speeds up or slows down.
+- $ \frac{b}{m} \frac{d\theta}{dt} $ : Damping force—friction proportional to speed ($ \frac{d\theta}{dt} $ is angular velocity).
+- $ \frac{g}{L} \sin(\theta) $ : Restoring force—gravity pulling the pendulum back ($ g = 9.81 \, \text{m/s}^2 $, $ L $ = length).
+- $ A \cos(\omega t) $ : External forcing—$ A $ is the push strength, $ \omega $ is the push frequency.
 
 This equation is **nonlinear** because of $$ \sin(\theta) $$, meaning exact solutions are tough. It’s like a recipe with a tricky ingredient!
 
