@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Problem 1: Simulating the Effects of the Lorentz Force - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Problem 1: Simulating the Effects of the Lorentz Force";
         var mkdocs_page_input_path = "1 Physics/4 Electromagnetism/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -70,8 +70,30 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">4 Electromagnetism</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1: Simulating the Effects of the Lorentz Force</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#applications-of-the-lorentz-force">Applications of the Lorentz Force</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-particle-accelerators">1. Particle Accelerators</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-mass-spectrometers">2. Mass Spectrometers</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-plasma-confinement">3. Plasma Confinement</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-astrophysics">4. Astrophysics</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#simulating-particle-motion">Simulating Particle Motion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#python-code-for-simulation">Python Code for Simulation</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +185,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">4 Electromagnetism</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Problem 1: Simulating the Effects of the Lorentz Force</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +193,95 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="problem-1-simulating-the-effects-of-the-lorentz-force">Problem 1: Simulating the Effects of the Lorentz Force</h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>The Lorentz force is a cornerstone of electromagnetism, describing the force experienced by a charged particle moving in electric and magnetic fields. It is mathematically expressed as:</p>
+<div class="arithmatex">\[
+\vec{F} = q (\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(<span class="arithmatex">\(\vec{F}\)</span>\)</span>: Lorentz force (N), representing the total electromagnetic force on the charged particle (measured in Newtons).
+- <span class="arithmatex">\(<span class="arithmatex">\(q\)</span>\)</span>: Charge of the particle (C), indicating the magnitude and sign of the electric charge (measured in Coulombs).
+- <span class="arithmatex">\(<span class="arithmatex">\(\vec{E}\)</span>\)</span>: Electric field (V/m), representing the force per unit charge due to electric potential differences (measured in Volts per meter).
+- <span class="arithmatex">\(<span class="arithmatex">\(\vec{B}\)</span>\)</span>: Magnetic field (T), representing the magnetic influence on moving electric charges (measured in Teslas).
+- <span class="arithmatex">\(<span class="arithmatex">\(\vec{v}\)</span>\)</span>: Velocity of the particle (m/s), indicating the speed and direction of the particle's motion (measured in meters per second).</p>
+<p>This force governs the motion of charged particles in systems such as particle accelerators, mass spectrometers, and plasma confinement devices. By simulating the trajectories of particles under the influence of the Lorentz force, we can gain insights into its applications and visualize the complex dynamics it produces. The simulation will allow us to explore how different field configurations and initial conditions affect the particle's path, providing a deeper understanding of electromagnetic phenomena.</p>
+<hr/>
+<h2 id="applications-of-the-lorentz-force"><strong>Applications of the Lorentz Force</strong></h2>
+<h3 id="1-particle-accelerators"><strong>1. Particle Accelerators</strong></h3>
+<ul>
+<li>In devices like cyclotrons and synchrotrons, magnetic fields bend the paths of charged particles into circular trajectories, while electric fields accelerate them to high speeds.</li>
+<li>The Lorentz force is precisely controlled to maintain the particles within the accelerator's beam path, enabling high-energy collisions for fundamental physics research.</li>
+</ul>
+<h3 id="2-mass-spectrometers"><strong>2. Mass Spectrometers</strong></h3>
+<ul>
+<li>Charged particles are deflected by magnetic fields based on their mass-to-charge ratio (<span class="arithmatex">\(<span class="arithmatex">\(m/q\)</span>\)</span>), enabling the identification of chemical compounds.</li>
+<li>The Lorentz force acts as a "selector," allowing only particles with specific <span class="arithmatex">\(<span class="arithmatex">\(m/q\)</span>\)</span> values to reach the detector, thus enabling accurate mass analysis.</li>
+</ul>
+<h3 id="3-plasma-confinement"><strong>3. Plasma Confinement</strong></h3>
+<ul>
+<li>In fusion reactors, magnetic fields confine plasma (a hot, ionized gas) to prevent it from coming into contact with reactor walls.</li>
+<li>The Lorentz force is crucial for maintaining plasma stability and achieving the high temperatures and densities required for nuclear fusion.</li>
+</ul>
+<h3 id="4-astrophysics"><strong>4. Astrophysics</strong></h3>
+<ul>
+<li>The Lorentz force explains the motion of charged particles in cosmic magnetic fields, such as those in solar winds, around pulsars, or in the Earth's magnetosphere.</li>
+<li>These interactions lead to phenomena like auroras and the trapping of charged particles in the Van Allen radiation belts.</li>
+</ul>
+<hr/>
+<h2 id="simulating-particle-motion"><strong>Simulating Particle Motion</strong></h2>
+<h3 id="equations-of-motion"><strong>Equations of Motion</strong></h3>
+<p>The motion of a charged particle under the Lorentz force is governed by Newton's second law:</p>
+<div class="arithmatex">\[
+m \frac{d\vec{v}}{dt} = q (\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>This equation can be broken into components for numerical simulation:
+- <span class="arithmatex">\(<span class="arithmatex">\(\frac{dv_x}{dt} = \frac{q}{m} (E_x + v_y B_z - v_z B_y)\)</span>\)</span>
+- <span class="arithmatex">\(<span class="arithmatex">\(\frac{dv_y}{dt} = \frac{q}{m} (E_y + v_z B_x - v_x B_z)\)</span>\)</span>
+- <span class="arithmatex">\(<span class="arithmatex">\(\frac{dv_z}{dt} = \frac{q}{m} (E_z + v_x B_y - v_y B_x)\)</span>\)</span></p>
+<p>The position of the particle is updated using:
+- <span class="arithmatex">\(<span class="arithmatex">\(\frac{dx}{dt} = v_x, \quad \frac{dy}{dt} = v_y, \quad \frac{dz}{dt} = v_z\)</span>\)</span></p>
+<p>These equations describe how the velocity and position of the particle evolve over time under the influence of electric and magnetic fields. To simulate this motion, we will use numerical methods to approximate the solutions to these differential equations.</p>
+<hr/>
+<h3 id="python-code-for-simulation"><strong>Python Code for Simulation</strong></h3>
+<p>Below are several Python scripts to simulate and visualize the motion of a charged particle under different field configurations.</p>
+<h4 id="simulation-1-uniform-magnetic-field"><strong>Simulation 1: Uniform Magnetic Field</strong></h4>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Constants
+q = 1.6e-19  # Charge of the particle (C)
+m = 9.11e-31  # Mass of the particle (kg)
+B = np.array([0, 0, 1])  # Magnetic field (T)
+E = np.array([0, 0, 0])  # Electric field (V/m)
+dt = 1e-11  # Time step (s)
+steps = 10000  # Number of simulation steps
+
+# Initial conditions
+r = np.zeros((steps, 3))  # Position (m)
+v = np.zeros((steps, 3))  # Velocity (m/s)
+v[0] = [1e6, 0, 0]  # Initial velocity (m/s)
+
+# Simulation loop
+for i in range(steps - 1):
+    # Calculate the Lorentz force
+    F = q * (E + np.cross(v[i], B))  # Lorentz force
+    a = F / m  # Acceleration
+    v[i + 1] = v[i] + a * dt  # Update velocity
+    r[i + 1] = r[i] + v[i] * dt  # Update position
+
+# Visualization
+fig = plt.figure(figsize=(10, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(r[:, 0], r[:, 1], r[:, 2], label="Particle Trajectory")
+ax.set_xlabel("X (m)")
+ax.set_ylabel("Y (m)")
+ax.set_zlabel("Z (m)")
+ax.set_title("Particle Motion in a Uniform Magnetic Field")
+ax.legend()
+plt.show()
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
