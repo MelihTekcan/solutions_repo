@@ -1,4 +1,6 @@
-# Problem 2: Estimating π Using Monte Carlo Methods
+# Problem 2
+
+## **Estimating π Using Monte Carlo Methods**
 
 ## Introduction
 
