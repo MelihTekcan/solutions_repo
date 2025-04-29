@@ -1,8 +1,40 @@
 # Problem 2: Estimating π Using Monte Carlo Methods
 
+## Introduction
+
+Monte Carlo methods are a class of computational algorithms that rely on repeated random sampling to obtain numerical results. In this article, we'll explore two fascinating ways to estimate the value of π using these methods: the circle-based approach and Buffon's Needle experiment.
+
 ---
 
 ## Part 1: Estimating π Using a Unit Circle
+
+### Theoretical Foundation
+
+Imagine a unit circle (radius = 1) inscribed inside a square with side length 2. The area of the circle is:
+
+$$
+\text{Area of Circle} = \pi r^2 = \pi (1)^2 = \pi
+$$
+
+The area of the square is:
+
+$$
+\text{Area of Square} = (\text{side length})^2 = 2^2 = 4
+$$
+
+If we randomly scatter points inside the square, the probability that a point falls inside the circle is the ratio of their areas:
+
+$$
+P(\text{point inside circle}) = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}
+$$
+
+Rearranging this gives us our estimation formula:
+
+$$
+\pi \approx 4 \times \frac{\text{Number of points inside circle}}{\text{Total number of points}}
+$$
+
+---
 
 ### Python Implementation
 
@@ -89,9 +121,34 @@ plt.grid()
 plt.show()
 ```
 
+
 ---
 
 ## Part 2: Estimating π Using Buffon's Needle
+
+### Theoretical Foundation
+
+Buffon's Needle is one of the oldest problems in geometric probability. Imagine a needle of length \( L \) dropped onto a floor with parallel lines distance \( D \) apart (where \( L \leq D \)).
+
+The probability that the needle crosses a line is:
+
+$$
+P(\text{cross}) = \frac{2L}{\pi D}
+$$
+
+Rearranging gives us:
+
+$$
+\pi = \frac{2L}{P(\text{cross}) \cdot D}
+$$
+
+For simplicity, we'll use \( L = D = 1 \), giving:
+
+$$
+\pi \approx \frac{2}{\text{Observed crossing probability}}
+$$
+
+---
 
 ### Python Implementation
 
@@ -122,14 +179,8 @@ print(f"Estimated π: {pi_estimate}")
 ### Visualization
 
 ```python
-import numpy as np
-import matplotlib.pyplot as plt
-
+# Plot Buffon's Needle simulation
 n_drops = 50
-needle_length = 1
-line_distance = 1
-
-# Generate needle positions
 centers = np.random.uniform(0, line_distance, n_drops)
 angles = np.random.uniform(0, np.pi, n_drops)
 
@@ -139,7 +190,6 @@ x2 = centers + (needle_length / 2) * np.cos(angles)
 y1 = (needle_length / 2) * np.sin(angles)
 y2 = -(needle_length / 2) * np.sin(angles)
 
-# Plot needles
 plt.figure(figsize=(10, 5))
 
 # Draw lines
@@ -164,9 +214,6 @@ plt.show()
 ### Analysis of Convergence
 
 ```python
-import numpy as np
-import matplotlib.pyplot as plt
-
 # Convergence analysis for Buffon's Needle
 max_drops = 10000
 step = 100
@@ -182,7 +229,6 @@ for n in drop_counts:
     pi_estimate = (2 * needle_length) / (crossing_prob * line_distance) if crossing_prob > 0 else 0
     estimates.append(pi_estimate)
 
-# Plot convergence
 plt.figure(figsize=(10, 6))
 plt.plot(drop_counts, estimates, label='Estimate')
 plt.axhline(np.pi, color='r', linestyle='--', label='True π')
@@ -193,4 +239,24 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
+
+---
+
+## Method Comparison
+
+| Aspect              | Circle Method       | Buffon's Needle       |
+|---------------------|---------------------|-----------------------|
+| **Convergence Rate** | ~1/√n              | ~1/√n (but slower)    |
+| **Computational Cost** | Low (simple math) | Higher (trig functions) |
+| **Implementation**   | Simple             | More complex          |
+| **Historical Context** | Modern Monte Carlo | 18th century problem  |
+| **Visual Appeal**    | High               | Moderate              |
+
+---
+
+## Conclusion
+
+Both methods demonstrate how randomness can be harnessed to estimate deterministic quantities like π. The circle method is generally preferred for practical π estimation due to its simplicity and faster convergence. Buffon's Needle, while historically significant and conceptually interesting, is less efficient.
+
+Monte Carlo methods teach us valuable lessons about probability, statistics, and computational mathematics. They show how repeated random experiments can reveal fundamental mathematical truths, and how increasing sample sizes lead to more precise estimates.
 
