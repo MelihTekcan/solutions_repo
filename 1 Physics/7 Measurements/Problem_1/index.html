@@ -84,7 +84,7 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">Problem 2: Estimating π Using Monte Carlo Methods</a>
+<li class="toctree-l2"><a class="reference internal" href="../../6%20Statistics/Problem_2/">Problem 2</a>
 </li>
 </ul>
 </li>
@@ -92,6 +92,58 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#measurements-and-uncertainties-fundamental-physics-and-mathematical-approaches">Measurements and Uncertainties: Fundamental Physics and Mathematical Approaches</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-what-is-measurement-uncertainty">1. What is Measurement Uncertainty?</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-types-of-uncertainties">2. Types of Uncertainties</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#21-systematic-errors">2.1 Systematic Errors</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#22-random-errors">2.2 Random Errors</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-mathematical-representation-of-uncertainties">3. Mathematical Representation of Uncertainties</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#31-absolute-and-relative-uncertainty">3.1 Absolute and Relative Uncertainty</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#32-standard-deviation-and-standard-error">3.2 Standard Deviation and Standard Error</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-propagation-of-uncertainties">4. Propagation of Uncertainties</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#41-additionsubtraction-operations">4.1 Addition/Subtraction Operations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#42-multiplicationdivision-operations">4.2 Multiplication/Division Operations</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-graphical-representation-of-uncertainties">5. Graphical Representation of Uncertainties</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#51-error-bars">5.1 Error Bars</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#52-confidence-intervals">5.2 Confidence Intervals</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-reporting-measurement-uncertainties">6. Reporting Measurement Uncertainties</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-monte-carlo-simulation-for-uncertainty-analysis">7. Monte Carlo Simulation for Uncertainty Analysis</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-practical-recommendations-and-conclusion">8. Practical Recommendations and Conclusion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#before-measurement">Before measurement:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#during-measurement">During measurement:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#data-analysis">Data analysis:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,10 +224,262 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h2 id="measurements-and-uncertainties-fundamental-physics-and-mathematical-approaches"><strong>Measurements and Uncertainties: Fundamental Physics and Mathematical Approaches</strong></h2>
+<h2 id="introduction">Introduction</h2>
+<p>In physics and other scientific disciplines, measurements are the building blocks of our understanding of nature. However, no measurement is perfect - every measurement contains some uncertainty. Understanding the sources of these uncertainties is vital for correctly interpreting measurements and reliably presenting results.</p>
+<p>This document examines the fundamentals of measurement uncertainties, their types, mathematical models, and simulation methods.</p>
+<hr/>
+<h2 id="1-what-is-measurement-uncertainty">1. What is Measurement Uncertainty?</h2>
+<p>Measurement uncertainty is a measure of how much a measurement might deviate from the true value. No measuring instrument is perfect, and every measurement process contains various sources of error.</p>
+<p><strong>Example</strong>: Let's imagine measuring the length of a pencil with a ruler. If the smallest division on the ruler is 1 mm, the uncertainty of our measurement will be approximately ±0.5 mm.</p>
+<hr/>
+<h2 id="2-types-of-uncertainties">2. Types of Uncertainties</h2>
+<h3 id="21-systematic-errors">2.1 Systematic Errors</h3>
+<p>Systematic errors are consistent biases that affect measurements in the same direction:</p>
+<ul>
+<li><strong>Instrument error</strong>: Comes from calibration issues</li>
+<li><strong>Method error</strong>: Results from flaws in the measurement technique</li>
+<li><strong>Environmental factors</strong>: Temperature, humidity, etc.</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Systematic error simulation
+true_value = 10.0
+systematic_error = 0.5  # Constant +0.5 error
+
+measurements = np.random.normal(0, 0.2, 100) + true_value + systematic_error
+
+plt.figure(figsize=(8, 5))
+plt.hist(measurements, bins=20)
+plt.axvline(x=true_value, color='r', linestyle='--', label='True Value')
+plt.axvline(x=np.mean(measurements), color='g', linestyle='--', label='Measurement Mean')
+plt.xlabel('Measurement Value')
+plt.ylabel('Frequency')
+plt.legend()
+plt.title('Effect of Systematic Error')
+plt.show()
+</code></pre>
+<hr/>
+<h3 id="22-random-errors">2.2 Random Errors</h3>
+<p>Random errors are unpredictable fluctuations that vary between measurements:</p>
+<ul>
+<li><strong>Observer error</strong>: Small differences from the person taking measurements</li>
+<li><strong>Instrument precision</strong>: Natural fluctuations of measuring devices</li>
+<li><strong>Environmental noise</strong>: Uncontrollable external factors</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Random error simulation
+true_value = 10.0
+random_errors = np.random.normal(0, 0.5, 100)  # Mean 0, std dev 0.5
+random_measurements = true_value + random_errors
+
+plt.figure(figsize=(8, 5))
+plt.hist(random_measurements, bins=20)
+plt.axvline(x=true_value, color='r', linestyle='--', label='True Value')
+plt.axvline(x=np.mean(random_measurements), color='g', linestyle='--', label='Measurement Mean')
+plt.xlabel('Measurement Value')
+plt.ylabel('Frequency')
+plt.legend()
+plt.title('Effect of Random Error')
+plt.show()
+</code></pre>
+<hr/>
+<h2 id="3-mathematical-representation-of-uncertainties">3. Mathematical Representation of Uncertainties</h2>
+<h3 id="31-absolute-and-relative-uncertainty">3.1 Absolute and Relative Uncertainty</h3>
+<ul>
+<li>
+<p><strong>Absolute uncertainty (Δx)</strong>: Absolute value of potential deviation from true value<br/>
+  Example: 15.2 ± 0.3 cm → Δx = 0.3 cm</p>
+</li>
+<li>
+<p><strong>Relative uncertainty</strong>: Ratio of absolute uncertainty to measured value<br/>
+  Relative uncertainty = Δx / x<br/>
+  Example: 0.3 / 15.2 ≈ 0.02 or 2%</p>
+</li>
+</ul>
+<pre><code class="language-python"># Relative uncertainty calculation
+import numpy as np
+
+measurement = 15.2
+absolute_uncertainty = 0.3
+relative_uncertainty = absolute_uncertainty / measurement
+
+print(f"Absolute uncertainty: {absolute_uncertainty}")
+print(f"Relative uncertainty: {relative_uncertainty:.4f} or {relative_uncertainty*100:.2f}%")
+</code></pre>
+<hr/>
+<h3 id="32-standard-deviation-and-standard-error">3.2 Standard Deviation and Standard Error</h3>
+<ul>
+<li><strong>Standard deviation (σ)</strong>: Measure of how spread out data points are  </li>
+<li><strong>Standard error (SE)</strong>: Uncertainty of the mean, SE = σ/√n</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+
+# Standard deviation and error calculation
+data = np.array([9.8, 10.2, 10.0, 9.9, 10.1, 9.7, 10.3, 10.0, 9.8, 10.2])
+
+mean = np.mean(data)
+std_dev = np.std(data, ddof=1)  # ddof=1 for sample standard deviation
+std_error = std_dev / np.sqrt(len(data))
+
+print(f"Mean: {mean:.2f}")
+print(f"Standard deviation: {std_dev:.4f}")
+print(f"Standard error: {std_error:.4f}")
+</code></pre>
+<hr/>
+<h2 id="4-propagation-of-uncertainties">4. Propagation of Uncertainties</h2>
+<h3 id="41-additionsubtraction-operations">4.1 Addition/Subtraction Operations</h3>
+<p>Absolute uncertainties combine as root sum of squares:<br/>
+Δz = √(Δx² + Δy²)</p>
+<h3 id="42-multiplicationdivision-operations">4.2 Multiplication/Division Operations</h3>
+<p>Relative uncertainties combine as root sum of squares:<br/>
+Δz/z = √((Δx/x)² + (Δy/y)²)</p>
+<pre><code class="language-python">import numpy as np
+
+# Uncertainty propagation calculation
+x, dx = 10.0, 0.2
+y, dy = 5.0, 0.1
+
+# Addition
+z_sum = x + y
+dz_sum = np.sqrt(dx**2 + dy**2)
+
+# Multiplication
+z_prod = x * y
+dz_prod = z_prod * np.sqrt((dx/x)**2 + (dy/y)**2)
+
+print(f"Sum: {z_sum:.2f} ± {dz_sum:.2f}")
+print(f"Product: {z_prod:.2f} ± {dz_prod:.2f}")
+</code></pre>
+<hr/>
+<h2 id="5-graphical-representation-of-uncertainties">5. Graphical Representation of Uncertainties</h2>
+<h3 id="51-error-bars">5.1 Error Bars</h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Error bar example
+x_data = np.array([1, 2, 3, 4, 5])
+y_data = np.array([2.1, 3.9, 6.2, 8.1, 9.8])
+y_error = np.array([0.3, 0.4, 0.2, 0.5, 0.3])
+
+plt.figure(figsize=(8, 5))
+plt.errorbar(x_data, y_data, yerr=y_error, fmt='o', capsize=5)
+plt.xlabel('X Values')
+plt.ylabel('Y Values')
+plt.title('Measurement Graph with Error Bars')
+plt.grid(True)
+plt.show()
+</code></pre>
+<hr/>
+<h3 id="52-confidence-intervals">5.2 Confidence Intervals</h3>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Confidence interval simulation
+np.random.seed(42)
+data = np.random.normal(50, 5, 100)  # Mean 50, std dev 5
+
+mean = np.mean(data)
+std_error = np.std(data, ddof=1) / np.sqrt(len(data))
+confidence_interval = 1.96 * std_error  # 95% confidence
+
+print(f"Mean: {mean:.2f}")
+print(f"95% Confidence Interval: {mean:.2f} ± {confidence_interval:.2f}")
+
+plt.figure(figsize=(8, 5))
+plt.hist(data, bins=20, alpha=0.7)
+plt.axvline(x=mean, color='r', label='Mean')
+plt.axvline(x=mean - confidence_interval, color='g', linestyle='--', label='Confidence Interval')
+plt.axvline(x=mean + confidence_interval, color='g', linestyle='--')
+plt.legend()
+plt.title('Measurement Distribution and Confidence Interval')
+plt.show()
+</code></pre>
+<hr/>
+<h2 id="6-reporting-measurement-uncertainties">6. Reporting Measurement Uncertainties</h2>
+<p>In scientific work, measurement results are typically reported as:</p>
+<ul>
+<li><strong>Significant figures rule</strong>: Uncertainty given with at most 2 significant figures</li>
+<li><strong>Rounding</strong>: Measurement value rounded to match uncertainty precision</li>
+<li><strong>Units</strong>: Both measurement and uncertainty have same units</li>
+</ul>
+<p><strong>Correct examples</strong>:
+- (15.24 ± 0.05) cm
+- (1.057 ± 0.003) g</p>
+<p><strong>Incorrect examples</strong>:
+- 15.235 ± 0.05 cm (measurement too precise)
+- 15.2 ± 0.053 cm (uncertainty too precise)</p>
+<hr/>
+<h2 id="7-monte-carlo-simulation-for-uncertainty-analysis">7. Monte Carlo Simulation for Uncertainty Analysis</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Monte Carlo simulation for uncertainty analysis
+def model_calculation(a, b):
+    return a * np.exp(-b)
+
+# True parameters
+a_true, b_true = 2.0, 0.5
+
+# Measurement uncertainties
+a_meas, a_unc = 2.1, 0.1
+b_meas, b_unc = 0.52, 0.02
+
+# Monte Carlo simulation
+n_simulations = 10000
+a_sim = np.random.normal(a_meas, a_unc, n_simulations)
+b_sim = np.random.normal(b_meas, b_unc, n_simulations)
+results = model_calculation(a_sim, b_sim)
+
+# Analysis
+mean_result = np.mean(results)
+std_result = np.std(results)
+conf_interval = np.percentile(results, [2.5, 97.5])  # 95% CI
+
+print(f"Model output mean: {mean_result:.4f}")
+print(f"Standard deviation: {std_result:.4f}")
+print(f"95% confidence interval: [{conf_interval[0]:.4f}, {conf_interval[1]:.4f}]")
+
+# Histogram
+plt.figure(figsize=(8, 5))
+plt.hist(results, bins=50, density=True, alpha=0.7)
+plt.axvline(x=mean_result, color='r', label='Mean')
+plt.axvline(x=conf_interval[0], color='g', linestyle='--', label='95% CI')
+plt.axvline(x=conf_interval[1], color='g', linestyle='--')
+plt.xlabel('Model Output')
+plt.ylabel('Probability Density')
+plt.title('Uncertainty Analysis with Monte Carlo Simulation')
+plt.legend()
+plt.show()
+</code></pre>
+<hr/>
+<h2 id="8-practical-recommendations-and-conclusion">8. Practical Recommendations and Conclusion</h2>
+<h3 id="before-measurement">Before measurement:</h3>
+<ul>
+<li>Calibrate instruments</li>
+<li>Understand the measurement method thoroughly</li>
+<li>Control or record environmental factors</li>
+</ul>
+<h3 id="during-measurement">During measurement:</h3>
+<ul>
+<li>Take multiple measurements</li>
+<li>Note potential systematic error sources</li>
+<li>Don't discard unexpected results without investigation</li>
+</ul>
+<h3 id="data-analysis">Data analysis:</h3>
+<ul>
+<li>Calculate uncertainties correctly</li>
+<li>Use appropriate statistical methods</li>
+<li>Report results clearly and transparently</li>
+</ul>
+<p>Understanding and properly reporting measurement uncertainties is critical for the reliability of scientific work. By properly managing these uncertainties, we can obtain more reliable results and contribute to scientific progress.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../6%20Statistics/Problem_2/" title="Problem 2: Estimating π Using Monte Carlo Methods"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../6%20Statistics/Problem_2/" title="Problem 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../../../2%20Mathematics/1%20Linear_algebra/" title="Linear Algebra">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
