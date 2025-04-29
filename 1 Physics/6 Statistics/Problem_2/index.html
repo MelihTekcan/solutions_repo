@@ -86,8 +86,12 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2: Estimating π Using Monte Carlo Methods</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#part-1-estimating-using-a-unit-circle">Part 1: Estimating π Using a Unit Circle</a>
 <ul>
+<li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation">Theoretical Foundation</a>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#python-implementation">Python Implementation</a>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#visualization">Visualization</a>
@@ -98,6 +102,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#part-2-estimating-using-buffons-needle">Part 2: Estimating π Using Buffon's Needle</a>
 <ul>
+<li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation_1">Theoretical Foundation</a>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#python-implementation_1">Python Implementation</a>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#visualization_1">Visualization</a>
@@ -105,6 +111,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#analysis-of-convergence_1">Analysis of Convergence</a>
 </li>
 </ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#method-comparison">Method Comparison</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
 </li>
 </ul>
 </li>
@@ -192,8 +202,28 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2-estimating-using-monte-carlo-methods">Problem 2: Estimating π Using Monte Carlo Methods</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Monte Carlo methods are a class of computational algorithms that rely on repeated random sampling to obtain numerical results. In this article, we'll explore two fascinating ways to estimate the value of π using these methods: the circle-based approach and Buffon's Needle experiment.</p>
 <hr/>
 <h2 id="part-1-estimating-using-a-unit-circle">Part 1: Estimating π Using a Unit Circle</h2>
+<h3 id="theoretical-foundation">Theoretical Foundation</h3>
+<p>Imagine a unit circle (radius = 1) inscribed inside a square with side length 2. The area of the circle is:</p>
+<div class="arithmatex">\[
+\text{Area of Circle} = \pi r^2 = \pi (1)^2 = \pi
+\]</div>
+<p>The area of the square is:</p>
+<div class="arithmatex">\[
+\text{Area of Square} = (\text{side length})^2 = 2^2 = 4
+\]</div>
+<p>If we randomly scatter points inside the square, the probability that a point falls inside the circle is the ratio of their areas:</p>
+<div class="arithmatex">\[
+P(\text{point inside circle}) = \frac{\text{Area of Circle}}{\text{Area of Square}} = \frac{\pi}{4}
+\]</div>
+<p>Rearranging this gives us our estimation formula:</p>
+<div class="arithmatex">\[
+\pi \approx 4 \times \frac{\text{Number of points inside circle}}{\text{Total number of points}}
+\]</div>
+<hr/>
 <h3 id="python-implementation">Python Implementation</h3>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -270,6 +300,21 @@ plt.show()
 </code></pre>
 <hr/>
 <h2 id="part-2-estimating-using-buffons-needle">Part 2: Estimating π Using Buffon's Needle</h2>
+<h3 id="theoretical-foundation_1">Theoretical Foundation</h3>
+<p>Buffon's Needle is one of the oldest problems in geometric probability. Imagine a needle of length <span class="arithmatex">\( L \)</span> dropped onto a floor with parallel lines distance <span class="arithmatex">\( D \)</span> apart (where <span class="arithmatex">\( L \leq D \)</span>).</p>
+<p>The probability that the needle crosses a line is:</p>
+<div class="arithmatex">\[
+P(\text{cross}) = \frac{2L}{\pi D}
+\]</div>
+<p>Rearranging gives us:</p>
+<div class="arithmatex">\[
+\pi = \frac{2L}{P(\text{cross}) \cdot D}
+\]</div>
+<p>For simplicity, we'll use <span class="arithmatex">\( L = D = 1 \)</span>, giving:</p>
+<div class="arithmatex">\[
+\pi \approx \frac{2}{\text{Observed crossing probability}}
+\]</div>
+<hr/>
 <h3 id="python-implementation_1">Python Implementation</h3>
 <pre><code class="language-python">import numpy as np
 
@@ -293,14 +338,8 @@ print(f"Estimated π: {pi_estimate}")
 </code></pre>
 <hr/>
 <h3 id="visualization_1">Visualization</h3>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
+<pre><code class="language-python"># Plot Buffon's Needle simulation
 n_drops = 50
-needle_length = 1
-line_distance = 1
-
-# Generate needle positions
 centers = np.random.uniform(0, line_distance, n_drops)
 angles = np.random.uniform(0, np.pi, n_drops)
 
@@ -310,7 +349,6 @@ x2 = centers + (needle_length / 2) * np.cos(angles)
 y1 = (needle_length / 2) * np.sin(angles)
 y2 = -(needle_length / 2) * np.sin(angles)
 
-# Plot needles
 plt.figure(figsize=(10, 5))
 
 # Draw lines
@@ -331,10 +369,7 @@ plt.show()
 </code></pre>
 <hr/>
 <h3 id="analysis-of-convergence_1">Analysis of Convergence</h3>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-# Convergence analysis for Buffon's Needle
+<pre><code class="language-python"># Convergence analysis for Buffon's Needle
 max_drops = 10000
 step = 100
 drop_counts = range(1, max_drops + 1, step)
@@ -349,7 +384,6 @@ for n in drop_counts:
     pi_estimate = (2 * needle_length) / (crossing_prob * line_distance) if crossing_prob &gt; 0 else 0
     estimates.append(pi_estimate)
 
-# Plot convergence
 plt.figure(figsize=(10, 6))
 plt.plot(drop_counts, estimates, label='Estimate')
 plt.axhline(np.pi, color='r', linestyle='--', label='True π')
@@ -360,6 +394,48 @@ plt.legend()
 plt.grid()
 plt.show()
 </code></pre>
+<hr/>
+<h2 id="method-comparison">Method Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Circle Method</th>
+<th>Buffon's Needle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Convergence Rate</strong></td>
+<td>~1/√n</td>
+<td>~1/√n (but slower)</td>
+</tr>
+<tr>
+<td><strong>Computational Cost</strong></td>
+<td>Low (simple math)</td>
+<td>Higher (trig functions)</td>
+</tr>
+<tr>
+<td><strong>Implementation</strong></td>
+<td>Simple</td>
+<td>More complex</td>
+</tr>
+<tr>
+<td><strong>Historical Context</strong></td>
+<td>Modern Monte Carlo</td>
+<td>18th century problem</td>
+</tr>
+<tr>
+<td><strong>Visual Appeal</strong></td>
+<td>High</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both methods demonstrate how randomness can be harnessed to estimate deterministic quantities like π. The circle method is generally preferred for practical π estimation due to its simplicity and faster convergence. Buffon's Needle, while historically significant and conceptually interesting, is less efficient.</p>
+<p>Monte Carlo methods teach us valuable lessons about probability, statistics, and computational mathematics. They show how repeated random experiments can reveal fundamental mathematical truths, and how increasing sample sizes lead to more precise estimates.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
