@@ -1,8 +1,3 @@
----
-title: "Problem 2"
-format: html
----
-
 # Investigating the Dynamics of a Forced Damped Pendulum
 
 ## 1. Introduction
