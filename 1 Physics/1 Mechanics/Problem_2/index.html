@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>Investigating the Dynamics of a Forced Damped Pendulum - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "Investigating the Dynamics of a Forced Damped Pendulum";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -48,7 +48,45 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Investigating the Dynamics of a Forced Damped Pendulum</a>
+<ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-introduction">1. Introduction</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#why-study-this">Why Study This?</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theoretical-foundation">2. Theoretical Foundation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#21-the-differential-equation">2.1. The Differential Equation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#22-small-angle-approximation">2.2. Small-Angle Approximation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#23-resonance">2.3. Resonance</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-analysis-of-dynamics">3. Analysis of Dynamics</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#31-damping-coefficient-bm">3.1. Damping Coefficient ($ b/m $)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#32-forcing-amplitude-a">3.2. Forcing Amplitude ($ A $)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#33-forcing-frequency-omega">3.3. Forcing Frequency ($ \omega $)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#34-regular-vs-chaotic-motion">3.4. Regular vs. Chaotic Motion</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-practical-applications">4. Practical Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-implementation-python-simulation">5. Implementation (Python Simulation)</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#regular-motion-simulation">Regular Motion Simulation</a>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -161,7 +199,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">Investigating the Dynamics of a Forced Damped Pendulum</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -169,90 +207,110 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<p>Investigating the Dynamics of a Forced Damped Pendulum
-1. Introduction
-A forced damped pendulum is a fascinating physical system that reveals how simple components—like a swinging weight—can produce complex behaviors. Imagine a playground swing: left alone, it slows down due to air resistance (damping); push it rhythmically, and it keeps going (forcing). This interplay creates a rich mix of motion, from smooth swings to wild, unpredictable chaos. In this document, we’ll:</p>
-<p>Break down the physics step-by-step.
-Simulate the motion with Python.
-Explore real-world applications.
-This system is key in fields like engineering (e.g., designing stable bridges) and science (e.g., modeling climate oscillations). Let’s dive in!</p>
-<p>Why Study This?
-Damping: Friction or air resistance reduces energy, mimicking real-world energy loss.
-Forcing: An external push adds energy, introducing new patterns like resonance or chaos.
-Complexity: Small tweaks can shift the pendulum from predictable to erratic motion.
-2. Theoretical Foundation
-The heart of this system is its equation of motion, which describes how the pendulum’s angle changes over time.</p>
-<p>2.1. The Differential Equation
-The motion is governed by:</p>
-<div class="arithmatex">\[ \frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t) \]</div>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>A <strong>forced damped pendulum</strong> is a fascinating physical system that reveals how simple components—like a swinging weight—can produce complex behaviors. Imagine a playground swing: left alone, it slows down due to air resistance (damping); push it rhythmically, and it keeps going (forcing). This interplay creates a rich mix of motion, from smooth swings to wild, unpredictable chaos. In this document, we’ll:</p>
+<ul>
+<li>Break down the physics step-by-step.</li>
+<li>Simulate the motion with Python.</li>
+<li>Explore real-world applications.</li>
+</ul>
+<p>This system is key in fields like engineering (e.g., designing stable bridges) and science (e.g., modeling climate oscillations). Let’s dive in!</p>
+<h3 id="why-study-this">Why Study This?</h3>
+<ul>
+<li><strong>Damping</strong>: Friction or air resistance reduces energy, mimicking real-world energy loss.</li>
+<li><strong>Forcing</strong>: An external push adds energy, introducing new patterns like resonance or chaos.</li>
+<li><strong>Complexity</strong>: Small tweaks can shift the pendulum from predictable to erratic motion.</li>
+</ul>
+<hr/>
+<h2 id="2-theoretical-foundation">2. Theoretical Foundation</h2>
+<p>The heart of this system is its equation of motion, which describes how the pendulum’s angle changes over time.</p>
+<h3 id="21-the-differential-equation">2.1. The Differential Equation</h3>
+<p>The motion is governed by:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
+\]</div>
 <p>Here’s what each term means:</p>
-<p>$ \theta $ : Angle from vertical (in radians—e.g., 0 is straight down, $ \pi/2 $ is horizontal).
-$ \frac{d^2\theta}{dt^2} $ : Angular acceleration—how fast the swinging speeds up or slows down.
-$ \frac{b}{m} \frac{d\theta}{dt} $ : Damping force—friction proportional to speed ($ \frac{d\theta}{dt} $ is angular velocity).
-$ \frac{g}{L} \sin(\theta) $ : Restoring force—gravity pulling the pendulum back ($ g = 9.81 , \text{m/s}^2 $, $ L $ = length).
-$ A \cos(\omega t) $ : External forcing—$ A $ is the push strength, $ \omega $ is the push frequency.
-This equation is nonlinear because of $$ \sin(\theta) $$, meaning exact solutions are tough. It’s like a recipe with a tricky ingredient!</p>
-<p>2.2. Small-Angle Approximation
-For small swings (e.g., $$ \theta &lt; 0.1 $$ radians, about 6°), $$ \sin(\theta) \approx \theta $$. This simplifies the equation to:</p>
-<div class="arithmatex">\[ \frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t) \]</div>
-<p>This is a linear equation, like a spring’s motion, and we can solve it. The solution has two parts:</p>
-<p>Transient: Natural oscillations (frequency $$ \sqrt{\frac{g}{L}} <span class="arithmatex">\(<span class="arithmatex">\() that fade due to damping.
-Steady-State: Oscillations matching the forcing frequency (\)</span>\)</span> \omega $$).
-Example: If $$ L = 1 $$ m, the natural frequency is $$ \sqrt{9.81} \approx 3.13 $$ rad/s. Push at this rate, and you get resonance—big swings!</p>
-<p>2.3. Resonance
-Resonance occurs when $$ \omega \approx \sqrt{\frac{g}{L}} $$. The forcing adds energy perfectly in sync with the pendulum’s natural rhythm, amplifying swings. Think of pushing a child on a swing: time it right, and they soar; time it wrong, and they barely move.</p>
+<ul>
+<li>$ \theta $ : Angle from vertical (in radians—e.g., 0 is straight down, $ \pi/2 $ is horizontal).</li>
+<li>$ \frac{d^2\theta}{dt^2} $ : Angular acceleration—how fast the swinging speeds up or slows down.</li>
+<li>$ \frac{b}{m} \frac{d\theta}{dt} $ : Damping force—friction proportional to speed ($ \frac{d\theta}{dt} $ is angular velocity).</li>
+<li>$ \frac{g}{L} \sin(\theta) $ : Restoring force—gravity pulling the pendulum back ($ g = 9.81\, \text{m/s}^2 $, $ L $ = length).</li>
+<li>$ A \cos(\omega t) $ : External forcing—$ A $ is the push strength, $ \omega $ is the push frequency.</li>
+</ul>
+<p>This equation is <strong>nonlinear</strong> because of $ \sin(\theta) $, meaning exact solutions are tough. It’s like a recipe with a tricky ingredient!</p>
+<h3 id="22-small-angle-approximation">2.2. Small-Angle Approximation</h3>
+<p>For small swings (e.g., $ \theta &lt; 0.1 $ radians, about 6°), $ \sin(\theta) \approx \theta $. This simplifies the equation to:</p>
+<div class="arithmatex">\[
+\frac{d^2\theta}{dt^2} + \frac{b}{m} \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
+\]</div>
+<p>This is a <strong>linear</strong> equation, like a spring’s motion, and we can solve it. The solution has two parts:</p>
 <ol>
-<li>Analysis of Dynamics
-Let’s explore how parameters shape the pendulum’s dance.</li>
+<li><strong>Transient</strong>: Natural oscillations (frequency $ \sqrt{\frac{g}{L}} $) that fade due to damping.</li>
+<li><strong>Steady-State</strong>: Oscillations matching the forcing frequency ($ \omega $).</li>
 </ol>
-<p>3.1. Damping Coefficient (b/m)
-Low Damping (e.g., b/m = 0.1): Swings last longer, fading slowly.
-High Damping (e.g., b/m = 2.0): Motion stops quickly unless forcing is strong.
-Analogy: Swing in air (low damping) vs. mud (high damping).</p>
-<p>3.2. Forcing Amplitude (A)
-Small A (e.g., 0.5): Gentle pushes—small, steady swings.
-Large A (e.g., 5.0): Big pushes—wild swings or chaos if damping can’t balance it.
-Example: A light tap vs. a hard shove on a swing.</p>
-<p>3.3. Forcing Frequency ($$ \omega $$)
-Low $$ \omega $$ (e.g., 0.5): Slow pushes—pendulum struggles to follow.
-Near $$ \sqrt{\frac{g}{L}} $$: Resonance—huge swings.
-High $$ \omega $$ (e.g., 10): Fast jiggles—small, erratic motion.
-3.4. Regular vs. Chaotic Motion
-Regular: Predictable swings (e.g., small A, $$ \omega $$ near natural frequency).
-Chaotic: Unpredictable wiggles (e.g., large A, mismatched $$ \omega $$). Chaos means tiny changes (like a 0.01 radian nudge) lead to totally different paths.
-Test: With $$ A = 5 $$, $$ \omega = 1.5 $$, chaos emerges—see it below!</p>
+<p><strong>Example</strong>: If $ L = 1 $ m, the natural frequency is $ \sqrt{9.81} \approx 3.13 $ rad/s. Push at this rate, and you get <strong>resonance</strong>—big swings!</p>
+<h3 id="23-resonance">2.3. Resonance</h3>
+<p>Resonance occurs when $ \omega \approx \sqrt{\frac{g}{L}} $. The forcing adds energy perfectly in sync with the pendulum’s natural rhythm, amplifying swings. Think of pushing a child on a swing: time it right, and they soar; time it wrong, and they barely move.</p>
+<hr/>
+<h2 id="3-analysis-of-dynamics">3. Analysis of Dynamics</h2>
+<p>Let’s explore how parameters shape the pendulum’s dance.</p>
+<h3 id="31-damping-coefficient-bm">3.1. Damping Coefficient ($ b/m $)</h3>
+<ul>
+<li><strong>Low Damping (e.g., $ b/m = 0.1 $)</strong>: Swings last longer, fading slowly.</li>
+<li><strong>High Damping (e.g., $ b/m = 2.0 $)</strong>: Motion stops quickly unless forcing is strong.</li>
+</ul>
+<p><strong>Analogy</strong>: Swing in air (low damping) vs. mud (high damping).</p>
+<h3 id="32-forcing-amplitude-a">3.2. Forcing Amplitude ($ A $)</h3>
+<ul>
+<li><strong>Small $ A $ (e.g., 0.5)</strong>: Gentle pushes—small, steady swings.</li>
+<li><strong>Large $ A $ (e.g., 5.0)</strong>: Big pushes—wild swings or chaos if damping can’t balance it.</li>
+</ul>
+<p><strong>Example</strong>: A light tap vs. a hard shove on a swing.</p>
+<h3 id="33-forcing-frequency-omega">3.3. Forcing Frequency ($ \omega $)</h3>
+<ul>
+<li><strong>Low $ \omega $ (e.g., 0.5)</strong>: Slow pushes—pendulum struggles to follow.</li>
+<li><strong>Near $ \sqrt{\frac{g}{L}} $</strong>: Resonance—huge swings.</li>
+<li><strong>High $ \omega $ (e.g., 10)</strong>: Fast jiggles—small, erratic motion.</li>
+</ul>
+<h3 id="34-regular-vs-chaotic-motion">3.4. Regular vs. Chaotic Motion</h3>
+<ul>
+<li><strong>Regular</strong>: Predictable swings (e.g., small $ A $, $ \omega $ near natural frequency).</li>
+<li><strong>Chaotic</strong>: Unpredictable wiggles (e.g., large $ A $, mismatched $ \omega $). Chaos means tiny changes (like a 0.01 radian nudge) lead to totally different paths.</li>
+</ul>
+<p><strong>Test</strong>: With $ A = 5 $, $ \omega = 1.5 $, chaos emerges—see it below!</p>
+<hr/>
+<h2 id="4-practical-applications">4. Practical Applications</h2>
+<p>This model isn’t just theoretical—it’s everywhere:</p>
 <ol>
-<li>Practical Applications
-This model isn’t just theoretical—it’s everywhere:</li>
+<li><strong>Energy Harvesting</strong>: Tiny pendulums in watches or sensors convert motion (e.g., walking) into power.</li>
+<li><strong>Seismic Isolation</strong>: Buildings use damped oscillators to absorb earthquake shakes.</li>
+<li><strong>Mechanical Resonance</strong>: Engineers avoid resonance in bridges (e.g., Tacoma Narrows collapse) or exploit it in musical instruments.</li>
 </ol>
-<p>Energy Harvesting: Tiny pendulums in watches or sensors convert motion (e.g., walking) into power.
-Seismic Isolation: Buildings use damped oscillators to absorb earthquake shakes.
-Mechanical Resonance: Engineers avoid resonance in bridges (e.g., Tacoma Narrows collapse) or exploit it in musical instruments.
-Real Example: The Millennium Bridge in London swayed due to crowd footsteps—a forced oscillation problem!</p>
-<ol>
-<li>Implementation (Python Simulation)
-Let’s simulate this with Python using SciPy’s solve_ivp. Below, we’ll plot the angle over time and a phase diagram for both regular and chaotic cases.</li>
-</ol>
-<p>Regular Motion Simulation
-Here’s the simulation with moderate forcing (A = 1.2):</p>
+<p><strong>Real Example</strong>: The Millennium Bridge in London swayed due to crowd footsteps—a forced oscillation problem!</p>
+<hr/>
+<h2 id="5-implementation-python-simulation">5. Implementation (Python Simulation)</h2>
+<p>Let’s simulate this with Python using <strong>SciPy’s solve_ivp</strong>. Below, we’ll plot the angle over time and a phase diagram for both regular and chaotic cases.</p>
+<h3 id="regular-motion-simulation">Regular Motion Simulation</h3>
+<p>Here’s the simulation with moderate forcing ($ A = 1.2 $):</p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
 # Define the forced damped pendulum equation
-def forced_damped_pendulum(t, y, b, m, g, L, A, omega):
+def forced_damped_pendulum(t, y, b, m, g, L, A, omega_f):
     theta, omega_dot = y  # y[0] = theta, y[1] = angular velocity
     dtheta_dt = omega_dot
-    domega_dt = -(b/m) * omega_dot - (g/L) * np.sin(theta) + (A/m) * np.cos(omega * t)
+    domega_dt = -(b/m) * omega_dot - (g/L) * np.sin(theta) + (A/m) * np.cos(omega_f * t)
     return [dtheta_dt, domega_dt]
 
 # Parameters
-m = 1.0  # Mass (kg)
-b = 0.5  # Damping coefficient
-g = 9.81  # Gravity (m/s²)
-L = 1.0  # Length of pendulum (m)
-A = 1.2  # Forcing amplitude
-omega = 1.5  # Forcing frequency
+m = 1.0      # Mass (kg)
+b = 0.5      # Damping coefficient
+g = 9.81     # Gravity (m/s²)
+L = 1.0      # Length of pendulum (m)
+A = 1.2      # Forcing amplitude
+omega_f = 1.5  # Forcing frequency
 y0 = [np.pi / 4, 0]  # Initial angle = 45°, initial angular velocity = 0
 
 # Time setup
@@ -260,7 +318,10 @@ t_span = (0, 20)  # Simulate for 20 seconds
 t_eval = np.linspace(*t_span, 1000)  # Time points for evaluation
 
 # Solve the differential equation
-sol = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval, args=(b, m, g, L, A, omega))
+sol = solve_ivp(
+    forced_damped_pendulum, t_span, y0, t_eval=t_eval,
+    args=(b, m, g, L, A, omega_f)
+)
 
 # Plotting the results
 plt.figure(figsize=(12, 8))
@@ -276,16 +337,14 @@ plt.grid(True)
 
 # Phase diagram (angle vs. angular velocity)
 plt.subplot(2, 1, 2)
-plt.plot(sol.y[0], sol.y[1], label="Phase Space")
+plt.plot(sol.y[0], sol.y[1])
 plt.xlabel("Angle (θ)")
 plt.ylabel("Angular Velocity (ω)")
 plt.title("Phase Diagram")
-plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
 plt.show()
-
 </code></pre>
 </div>
 </div><footer>
