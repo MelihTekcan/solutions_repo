@@ -98,21 +98,3 @@ binom_pop = np.random.binomial(10, 0.3, 100000)
 clt_demo(binom_pop, "Binomial")
 ```
 
-## 4. Practical Applications
-
-### 4.1 Statistical Inference
-**Confidence Intervals**:
-```python
-sample = np.random.choice(population, 30)
-ci = np.mean(sample) ± 1.96 * np.std(sample) / np.sqrt(30)
-```
-
-### 4.2 Quality Control
-**Control Charts**:
-- UCL = μ + 3σ/√n
-- LCL = μ - 3σ/√n
-
-### 4.3 Machine Learning
-- Bootstrap sampling
-- Ensemble methods
-- Error estimation
