@@ -66,14 +66,6 @@ The range $$R$$ depends on:
 
 ---
 
-### Python Visualization: Range vs. Angle
-
-The following Python code generates a graph showing how the range varies with the angle of projection for different initial velocities:
-
-
-```bash
-python sim1.py
-```
 ## 3. Practical Applications
 
 ### Real-World Scenarios
@@ -97,9 +89,9 @@ Projectile motion has numerous real-world applications across various fields:
 
 ### Trajectory Example
 
-The trajectory for an object launched with an initial velocity of $$v_0 = 20 \, \text{m/s}$$ at an angle of $$\theta = 45^\circ$$ is shown below:
+The trajectory for an object launched with an initial velocity of $$v_0 = 20 \, \text{m/s}$$ at an angle of $$\theta = 45^\circ$$ 
 
-![Projectile Trajectory](trajectory.png)
+
 
 The parabolic path demonstrates the interplay between horizontal and vertical motion:
 - The horizontal motion is uniform, with a constant velocity.
@@ -109,7 +101,7 @@ The parabolic path demonstrates the interplay between horizontal and vertical mo
 
 ## 4. Implementation
 
-The following Python script simulates and visualizes the range and trajectory of a projectile. It calculates the range for various angles of projection and plots the trajectory for a specific case.
+
 
 ```python
 import numpy as np
