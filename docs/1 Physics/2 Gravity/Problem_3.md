@@ -1,4 +1,5 @@
-# Problem 3: Payload Trajectories Near Earth
+# Problem 3 
+## Payload Trajectories Near Earth
 
 This report analyzes the trajectories of a payload released from a rocket near Earth. It explores elliptical, parabolic, and hyperbolic paths based on initial conditions. Python simulations visualize these trajectories, relating them to applications like satellite deployment and interplanetary missions.
 
