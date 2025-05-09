@@ -1,4 +1,5 @@
-# Problem 1: Simulating the Effects of the Lorentz Force
+# Problem 1 
+## Simulating the Effects of the Lorentz Force
 
 ## **Introduction**
 
