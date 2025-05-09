@@ -9,13 +9,7 @@ A **forced damped pendulum** is a fascinating physical system that reveals how s
 - Simulate the motion with Python.
 - Explore real-world applications.
 
-This system is key in fields like engineering (e.g., designing stable bridges) and science (e.g., modeling climate oscillations). Let’s dive in!
-
-### Why Study This?
-
-- **Damping**: Friction or air resistance reduces energy, mimicking real-world energy loss.
-- **Forcing**: An external push adds energy, introducing new patterns like resonance or chaos.
-- **Complexity**: Small tweaks can shift the pendulum from predictable to erratic motion.
+This system is key in fields like engineering (e.g., designing stable bridges) and science (e.g., modeling climate oscillations).
 
 ---
 
