@@ -74,28 +74,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#mathematical-description-of-a-wave">Mathematical Description of a Wave</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#problem-statement">Problem Statement</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#questions-to-solve">Questions to Solve:</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#step-by-step-solution">Step-by-Step Solution</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#1-amplitude-a">1. Amplitude ((\(A\)\))</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#2-wavelength-lambda">2. Wavelength ((\(\lambda\)\))</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#3-frequency-f">3. Frequency ((\(f\)\))</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#4-wave-speed-v">4. Wave Speed ((\(v\)\))</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#5-direction-of-wave-propagation">5. Direction of Wave Propagation</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#final-answers">Final Answers</a>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="#practical-applications-of-wave-motion">Practical Applications of Wave Motion</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#wave-simulation-using-python">Wave Simulation Using Python</a>
@@ -255,73 +233,6 @@ y(x, t) = A \sin(kx - \omega t + \phi)
 - <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>: Wave number (spatial frequency).
 - <span class="arithmatex">\(\omega = 2\pi f\)</span>: Angular frequency (temporal frequency).
 - <span class="arithmatex">\(\phi\)</span>: Phase constant, which determines the wave’s initial position.</p>
-<hr/>
-<h2 id="problem-statement"><strong>Problem Statement</strong></h2>
-<p>A wave traveling along a string is described by the equation:</p>
-<div class="arithmatex">\[
-y(x, t) = 0.05 \sin(4\pi x - 20\pi t)
-\]</div>
-<p>Where:
-<span class="arithmatex">\(y(x, t)\)</span> is in meters,
-- <span class="arithmatex">\(x\)</span> is in meters,
-- <span class="arithmatex">\(t\)</span> is in seconds.</p>
-<h3 id="questions-to-solve"><strong>Questions to Solve:</strong></h3>
-<ol>
-<li>What is the amplitude of the wave?</li>
-<li>What is the wavelength of the wave?</li>
-<li>What is the frequency of the wave?</li>
-<li>What is the speed of the wave?</li>
-<li>What is the direction of wave propagation?</li>
-</ol>
-<hr/>
-<h2 id="step-by-step-solution"><strong>Step-by-Step Solution</strong></h2>
-<h3 id="1-amplitude-a"><strong>1. Amplitude (<span class="arithmatex">(<span class="arithmatex">\(A\)</span>\)</span>)</strong></h3>
-<p>The amplitude is the coefficient of the sine function. From the equation:
-$$
-A = 0.05 \, \text{m}
-$$</p>
-<h3 id="2-wavelength-lambda"><strong>2. Wavelength (<span class="arithmatex">(<span class="arithmatex">\(\lambda\)</span>\)</span>)</strong></h3>
-<p>The wave number <span class="arithmatex">\(<span class="arithmatex">\(k\)</span>\)</span> is related to the wavelength by:
-$$
-k = \frac{2\pi}{\lambda}
-$$
-From the equation, <span class="arithmatex">\(<span class="arithmatex">\(k = 4\pi\)</span>\)</span>. Solving for <span class="arithmatex">\(<span class="arithmatex">\(\lambda\)</span>\)</span>:
-$$
-\lambda = \frac{2\pi}{k} = \frac{2\pi}{4\pi} = 0.5 \, \text{m}
-$$</p>
-<h3 id="3-frequency-f"><strong>3. Frequency (<span class="arithmatex">(<span class="arithmatex">\(f\)</span>\)</span>)</strong></h3>
-<p>The angular frequency <span class="arithmatex">\(<span class="arithmatex">\(\omega\)</span>\)</span> is related to the frequency by:
-$$
-\omega = 2\pi f
-$$
-From the equation, <span class="arithmatex">\(<span class="arithmatex">\(\omega = 20\pi\)</span>\)</span>. Solving for <span class="arithmatex">\(<span class="arithmatex">\(f\)</span>\)</span>:
-$$
-f = \frac{\omega}{2\pi} = \frac{20\pi}{2\pi} = 10 \, \text{Hz}
-$$</p>
-<h3 id="4-wave-speed-v"><strong>4. Wave Speed (<span class="arithmatex">(<span class="arithmatex">\(v\)</span>\)</span>)</strong></h3>
-<p>The wave speed is given by:
-$$
-v = f \lambda
-$$
-Substitute <span class="arithmatex">\(<span class="arithmatex">\(f = 10 \, \text{Hz}\)</span>\)</span> and <span class="arithmatex">\(<span class="arithmatex">\(\lambda = 0.5 \, \text{m}\)</span>\)</span>:
-$$
-v = 10 \times 0.5 = 5 \, \text{m/s}
-$$</p>
-<h3 id="5-direction-of-wave-propagation"><strong>5. Direction of Wave Propagation</strong></h3>
-<p>The wave equation is of the form:
-$$
-y(x, t) = A \sin(kx - \omega t)
-$$
-The negative sign in <span class="arithmatex">\(<span class="arithmatex">\(kx - \omega t\)</span>\)</span> indicates the wave is traveling in the <strong>positive x-direction</strong>.</p>
-<hr/>
-<h2 id="final-answers"><strong>Final Answers</strong></h2>
-<ol>
-<li><strong>Amplitude</strong>: <span class="arithmatex">\(<span class="arithmatex">\(0.05 \, \text{m}\)</span>\)</span> </li>
-<li><strong>Wavelength</strong>: <span class="arithmatex">\(<span class="arithmatex">\(0.5 \, \text{m}\)</span>\)</span> </li>
-<li><strong>Frequency</strong>: <span class="arithmatex">\(<span class="arithmatex">\(10 \, \text{Hz}\)</span>\)</span> </li>
-<li><strong>Wave Speed</strong>: <span class="arithmatex">\(<span class="arithmatex">\(5 \, \text{m/s}\)</span>\)</span> </li>
-<li><strong>Direction</strong>: Positive x-direction.</li>
-</ol>
 <hr/>
 <h2 id="practical-applications-of-wave-motion"><strong>Practical Applications of Wave Motion</strong></h2>
 <ol>
