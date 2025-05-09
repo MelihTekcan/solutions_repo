@@ -1,7 +1,7 @@
 # Problem 2
-# Escape Velocities and Cosmic Velocities: A Beginner's Guide
+# Escape Velocities and Cosmic Velocities:
 
-Imagine you're trying to throw a ball so hard that it leaves Earth and never comes back. Or picture a rocket zooming into space to orbit the planet or travel to Mars. To make these things happen, we need to understand **escape velocity** and **cosmic velocities**. These are special speeds that objects need to reach to overcome gravity and move through space. This document will explain these concepts in a simple way, show how we calculate them, and use Python to create graphs to visualize them. We'll also talk about why these ideas are super important for space exploration.
+Imagine you're trying to throw a ball so hard that it leaves Earth and never comes back. Or picture a rocket zooming into space to orbit the planet or travel to Mars. To make these things happen, we need to understand **escape velocity** and **cosmic velocities**. These are special speeds that objects need to reach to overcome gravity and move through space.
 
 ---
 
