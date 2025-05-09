@@ -114,16 +114,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-practical-applications">4. Practical Applications</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#41-statistical-inference">4.1 Statistical Inference</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#42-quality-control">4.2 Quality Control</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#43-machine-learning">4.3 Machine Learning</a>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -302,22 +292,6 @@ clt_demo(exp_pop, "Exponential")
 binom_pop = np.random.binomial(10, 0.3, 100000)
 clt_demo(binom_pop, "Binomial")
 </code></pre>
-<h2 id="4-practical-applications">4. Practical Applications</h2>
-<h3 id="41-statistical-inference">4.1 Statistical Inference</h3>
-<p><strong>Confidence Intervals</strong>:</p>
-<pre><code class="language-python">sample = np.random.choice(population, 30)
-ci = np.mean(sample) ± 1.96 * np.std(sample) / np.sqrt(30)
-</code></pre>
-<h3 id="42-quality-control">4.2 Quality Control</h3>
-<p><strong>Control Charts</strong>:
-- UCL = μ + 3σ/√n
-- LCL = μ - 3σ/√n</p>
-<h3 id="43-machine-learning">4.3 Machine Learning</h3>
-<ul>
-<li>Bootstrap sampling</li>
-<li>Ensemble methods</li>
-<li>Error estimation</li>
-</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
