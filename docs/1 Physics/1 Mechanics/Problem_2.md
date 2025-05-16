@@ -101,9 +101,7 @@ This model isn’t just theoretical—it’s everywhere:
 
 ---
 
-## 5. Implementation (Python Simulation)
 
-Let’s simulate this with Python using **SciPy’s solve_ivp**. Below, we’ll plot the angle over time and a phase diagram for both regular and chaotic cases.
 
 ### Regular Motion Simulation
 
