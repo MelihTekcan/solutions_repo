@@ -8,7 +8,7 @@ Projectile motion is a fundamental concept in physics that describes the motion 
 
 ### What is Projectile Motion?
 
-Projectile motion occurs when an object is launched with an initial velocity $$v_0$$ at an angle $\theta$ to the horizontal. The motion is influenced only by gravity $g$, assuming no air resistance. The motion can be broken into two independent components:
+Projectile motion occurs when an object is launched with an initial velocity $v_0$ at an angle $\theta$ to the horizontal. The motion is influenced only by gravity $g$, assuming no air resistance. The motion can be broken into two independent components:
 
 1. **Horizontal Motion**:
    - The horizontal velocity remains constant because there is no horizontal acceleration.
