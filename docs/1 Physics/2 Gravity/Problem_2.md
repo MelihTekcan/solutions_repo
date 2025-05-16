@@ -91,13 +91,10 @@ Let’s calculate these velocities for three celestial bodies: **Earth**, **Mars
 | Jupiter       | $1.899 \times 10^{27}$ | $6.991 \times 10^7$ | $7.785 \times 10^{11}$                  |
 | Sun           | $1.989 \times 10^{30}$ | -                 | -                                          |
 
-We’ll write a Python script to calculate:
+Python script to calculate:
 - **First cosmic velocity** (orbital velocity).
 - **Second cosmic velocity** (escape velocity).
 - **Third cosmic velocity** (to escape the Sun, starting from each planet’s orbit).
-
-The script will also create bar charts to compare these velocities.
-
 ### Python Script
 
 ```python
