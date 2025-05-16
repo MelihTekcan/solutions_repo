@@ -92,8 +92,6 @@
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#python-code-for-simulation">Python Code for Simulation</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -203,11 +201,11 @@
 \vec{F} = q (\vec{E} + \vec{v} \times \vec{B})
 \]</div>
 <p>Where:
-- <span class="arithmatex">\(<span class="arithmatex">\(\vec{F}\)</span>\)</span>: Lorentz force (N), representing the total electromagnetic force on the charged particle (measured in Newtons).
-- <span class="arithmatex">\(<span class="arithmatex">\(q\)</span>\)</span>: Charge of the particle (C), indicating the magnitude and sign of the electric charge (measured in Coulombs).
-- <span class="arithmatex">\(<span class="arithmatex">\(\vec{E}\)</span>\)</span>: Electric field (V/m), representing the force per unit charge due to electric potential differences (measured in Volts per meter).
-- <span class="arithmatex">\(<span class="arithmatex">\(\vec{B}\)</span>\)</span>: Magnetic field (T), representing the magnetic influence on moving electric charges (measured in Teslas).
-- <span class="arithmatex">\(<span class="arithmatex">\(\vec{v}\)</span>\)</span>: Velocity of the particle (m/s), indicating the speed and direction of the particle's motion (measured in meters per second).</p>
+- <span class="arithmatex">\(\vec{F}\)</span>: Lorentz force (N), representing the total electromagnetic force on the charged particle (measured in Newtons).
+- <span class="arithmatex">\(q\)</span>: Charge of the particle (C), indicating the magnitude and sign of the electric charge (measured in Coulombs).
+- <span class="arithmatex">\(\vec{E}\)</span>: Electric field (V/m), representing the force per unit charge due to electric potential differences (measured in Volts per meter).
+- <span class="arithmatex">\(\vec{B}\)</span>: Magnetic field (T), representing the magnetic influence on moving electric charges (measured in Teslas).
+- <span class="arithmatex">\(\vec{v}\)</span>: Velocity of the particle (m/s), indicating the speed and direction of the particle's motion (measured in meters per second).</p>
 <p>This force governs the motion of charged particles in systems such as particle accelerators, mass spectrometers, and plasma confinement devices. By simulating the trajectories of particles under the influence of the Lorentz force, we can gain insights into its applications and visualize the complex dynamics it produces. The simulation will allow us to explore how different field configurations and initial conditions affect the particle's path, providing a deeper understanding of electromagnetic phenomena.</p>
 <hr/>
 <h2 id="applications-of-the-lorentz-force"><strong>Applications of the Lorentz Force</strong></h2>
@@ -218,8 +216,8 @@
 </ul>
 <h3 id="2-mass-spectrometers"><strong>2. Mass Spectrometers</strong></h3>
 <ul>
-<li>Charged particles are deflected by magnetic fields based on their mass-to-charge ratio (<span class="arithmatex">\(<span class="arithmatex">\(m/q\)</span>\)</span>), enabling the identification of chemical compounds.</li>
-<li>The Lorentz force acts as a "selector," allowing only particles with specific <span class="arithmatex">\(<span class="arithmatex">\(m/q\)</span>\)</span> values to reach the detector, thus enabling accurate mass analysis.</li>
+<li>Charged particles are deflected by magnetic fields based on their mass-to-charge ratio (<span class="arithmatex">\(m/q\)</span>), enabling the identification of chemical compounds.</li>
+<li>The Lorentz force acts as a "selector," allowing only particles with specific <span class="arithmatex">\(m/q\)</span> values to reach the detector, thus enabling accurate mass analysis.</li>
 </ul>
 <h3 id="3-plasma-confinement"><strong>3. Plasma Confinement</strong></h3>
 <ul>
@@ -246,9 +244,7 @@ m \frac{d\vec{v}}{dt} = q (\vec{E} + \vec{v} \times \vec{B})
 - <span class="arithmatex">\(<span class="arithmatex">\(\frac{dx}{dt} = v_x, \quad \frac{dy}{dt} = v_y, \quad \frac{dz}{dt} = v_z\)</span>\)</span></p>
 <p>These equations describe how the velocity and position of the particle evolve over time under the influence of electric and magnetic fields. To simulate this motion, we will use numerical methods to approximate the solutions to these differential equations.</p>
 <hr/>
-<h3 id="python-code-for-simulation"><strong>Python Code for Simulation</strong></h3>
-<p>Below are several Python scripts to simulate and visualize the motion of a charged particle under different field configurations.</p>
-<h4 id="simulation-1-uniform-magnetic-field"><strong>Simulation 1: Uniform Magnetic Field</strong></h4>
+<h4 id="simulation-uniform-magnetic-field"><strong>Simulation: Uniform Magnetic Field</strong></h4>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
