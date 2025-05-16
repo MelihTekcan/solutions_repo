@@ -250,21 +250,43 @@
 <hr/>
 <h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
 <h3 id="how-does-the-range-depend-on-the-angle-of-projection">How Does the Range Depend on the Angle of Projection?</h3>
-<p>The range <span class="arithmatex">\(<span class="arithmatex">\(R\)</span>\)</span> depends on:
-- <strong>Initial Velocity (<span class="arithmatex">(<span class="arithmatex">\(v_0\)</span>\)</span>)</strong>: The range increases quadratically with <span class="arithmatex">\(<span class="arithmatex">\(v_0\)</span>\)</span> (<span class="arithmatex">\(<span class="arithmatex">\(R \propto v_0^2\)</span>\)</span>).
-- <strong>Angle of Projection (<span class="arithmatex">(<span class="arithmatex">\(\theta\)</span>\)</span>)</strong>: The range is maximized at <span class="arithmatex">\(<span class="arithmatex">\(\theta = 45^\circ\)</span>\)</span>.
-- <strong>Gravitational Acceleration (<span class="arithmatex">(<span class="arithmatex">\(g\)</span>\)</span>)</strong>: The range decreases as <span class="arithmatex">\(<span class="arithmatex">\(g\)</span>\)</span> increases (<span class="arithmatex">\(<span class="arithmatex">\(R \propto 1/g\)</span>\)</span>).</p>
+<p>TThe range <span class="arithmatex">\(R\)</span> depends on:</p>
+<ol>
+<li><strong>Initial velocity (<span class="arithmatex">\(v_0\)</span>)</strong> </li>
+<li>
+<p>Quadratic dependence:<br/>
+     $$
+     R \propto v_0^2
+     $$</p>
+</li>
+<li>
+<p><strong>Projection angle (<span class="arithmatex">\(\theta\)</span>)</strong> </p>
+</li>
+<li>
+<p>Maximum at <span class="arithmatex">\(45^\circ\)</span>:<br/>
+     $$
+     R = \frac{v_0^2 \sin(2\theta)}{g}
+     $$</p>
+</li>
+<li>
+<p><strong>Gravity (<span class="arithmatex">\(g\)</span>)</strong> </p>
+</li>
+<li>Inversely proportional:<br/>
+     $$
+     R \propto \frac{1}{g}
+     $$</li>
+</ol>
 <h3 id="key-observations">Key Observations</h3>
 <ol>
 <li>
-<p>The range is symmetric:
+<p>The range is symmetric:<br/>
    $$
    R(\theta) = R(90^\circ - \theta)
    $$
-   For example, the range at <span class="arithmatex">\(<span class="arithmatex">\(\theta = 30^\circ\)</span>\)</span> is the same as at <span class="arithmatex">\(<span class="arithmatex">\(\theta = 60^\circ\)</span>\)</span>.</p>
+   For example, the range at <span class="arithmatex">\(\theta = 30^\circ\)</span> is the same as at <span class="arithmatex">\(\theta = 60^\circ\)</span>.</p>
 </li>
 <li>
-<p>The maximum range occurs at <span class="arithmatex">\(<span class="arithmatex">\(\theta = 45^\circ\)</span>\)</span> for flat terrain.</p>
+<p>The maximum range occurs at <span class="arithmatex">\(\theta = 45^\circ\)</span> for flat terrain.</p>
 </li>
 </ol>
 <hr/>
@@ -273,7 +295,7 @@
 <p>Projectile motion has numerous real-world applications across various fields:</p>
 <ul>
 <li><strong>Sports</strong>:<br/>
-  In sports like soccer and golf, players adjust the angle of projection (<span class="arithmatex">\(<span class="arithmatex">\(\theta\)</span>\)</span>) and the initial velocity (<span class="arithmatex">\(<span class="arithmatex">\(v_0\)</span>\)</span>) to achieve optimal range or height. For example:</li>
+  In sports like soccer and golf, players adjust the angle of projection (<span class="arithmatex">\(\theta\)</span>) and the initial velocity (<span class="arithmatex">\(v_0\)</span>) to achieve optimal range or height. For example:</li>
 <li>A soccer player might aim for a higher angle to clear a wall of defenders.</li>
 <li>
 <p>A golfer adjusts the angle and velocity to maximize the distance of a drive.</p>
@@ -294,7 +316,7 @@
 <li>Satellites are launched into orbit using similar principles, with adjustments for Earth's curvature and atmosphere.</li>
 </ul>
 <h3 id="trajectory-example">Trajectory Example</h3>
-<p>The trajectory for an object launched with an initial velocity of <span class="arithmatex">\(<span class="arithmatex">\(v_0 = 20 \, \text{m/s}\)</span>\)</span> at an angle of <span class="arithmatex">\(<span class="arithmatex">\(\theta = 45^\circ\)</span>\)</span> </p>
+<p>The trajectory for an object launched with an initial velocity of <span class="arithmatex">\(v_0 = 20\,\text{m/s}\)</span> at an angle of <span class="arithmatex">\(\theta = 45^\circ\)</span></p>
 <p>The parabolic path demonstrates the interplay between horizontal and vertical motion:
 - The horizontal motion is uniform, with a constant velocity.
 - The vertical motion is accelerated due to gravity, resulting in a curved path.</p>
