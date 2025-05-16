@@ -178,7 +178,7 @@
 <p>This report analyzes the trajectories of a payload released from a rocket near Earth. It explores elliptical, parabolic, and hyperbolic paths based on initial conditions. Python simulations visualize these trajectories, relating them to applications like satellite deployment and interplanetary missions.</p>
 <p><strong>Theoretical Background:</strong></p>
 <ul>
-<li><strong>Gravitational Force:</strong>  The motion is governed by Newton's Law of Universal Gravitation: <span class="arithmatex">(<span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>\)</span>, where:<ul>
+<li><strong>Gravitational Force:</strong>  The motion is governed by Newton's Law of Universal Gravitation: <span class="arithmatex">\(F = \frac{G M m}{r^2}\)</span>, where:<ul>
 <li><span class="arithmatex">\(G\)</span> is the gravitational constant.</li>
 <li><span class="arithmatex">\(M\)</span> is Earth's mass.</li>
 <li><span class="arithmatex">\(m\)</span> is the payload's mass.</li>
@@ -186,14 +186,14 @@
 </ul>
 </li>
 <li><strong>Equations of Motion:</strong> To model the motion, we use a 2D Cartesian coordinate system, resulting in:
-    <span class="arithmatex">\(<span class="arithmatex">\(\ddot{x} = -\frac{G M x}{r^3}, \quad \ddot{y} = -\frac{G M y}{r^3}\)</span>\)</span></li>
-<li><strong>Trajectory Types:</strong> Determined by the specific mechanical energy: <span class="arithmatex">(<span class="arithmatex">\(\epsilon = \frac{v^2}{2} - \frac{G M}{r}\)</span>\)</span><ul>
+    <span class="arithmatex">\(\ddot{x} = -\frac{G M x}{r^3}, \quad \ddot{y} = -\frac{G M y}{r^3}\)</span></li>
+<li><strong>Trajectory Types:</strong> Determined by the specific mechanical energy: <span class="arithmatex">\(\epsilon = \frac{v^2}{2} - \frac{G M}{r}\)</span><ul>
 <li>Elliptical (<span class="arithmatex">\(\epsilon &lt; 0\)</span>): Closed orbit.</li>
 <li>Parabolic (<span class="arithmatex">\(\epsilon = 0\)</span>): Escape threshold.</li>
 <li>Hyperbolic (<span class="arithmatex">\(\epsilon &gt; 0\)</span>): Escape trajectory.</li>
 </ul>
 </li>
-<li><strong>Escape Velocity:</strong> The minimum speed to escape Earth's gravity: <span class="arithmatex">\(<span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span>\)</span> (approximately 11.2 km/s at 200 km altitude).</li>
+<li><strong>Escape Velocity:</strong> The minimum speed to escape Earth's gravity: <span class="arithmatex">\(v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}\)</span> (approximately 11.2 km/s at 200 km altitude).</li>
 </ul>
 <p><strong>Python Implementation:</strong></p>
 <p>```python
