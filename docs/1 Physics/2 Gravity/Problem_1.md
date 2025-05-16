@@ -68,7 +68,7 @@ $$
 G M = \frac{4 \pi^2 R^3}{T^2}
 $$
 
-Rearranging for $$T^2$$:
+Rearranging for $T^2$:
 
 $$
 T^2 = \frac{4 \pi^2}{G M} R^3
@@ -80,7 +80,7 @@ This is the mathematical expression of **Kepler's Third Law**. The term $$\frac{
 
 ### **2.3 Key Insight**
 Kepler's Third Law shows that:
-- The orbital period $$T$$ increases with the orbital radius $$R$$.
+- The orbital period $T$ increases with the orbital radius $R$.
 - Larger orbits take longer to complete because the planet or satellite must travel a greater distance at a slower speed.
 
 ---
@@ -102,7 +102,7 @@ Substitute:
 - $$1 \, \text{year} = 3.154 \times 10^7 \, \text{s}$$
 - $$G = 6.674 \times 10^{-11} \, \text{m}^3 \text{kg}^{-1} \text{s}^{-2}$$
 
-The Sun's mass is approximately $$1.989 \times 10^{30} \, \text{kg}$$.
+The Sun's mass is approximately $1.989 \times 10^{30} \, \text{kg}$.
 
 ---
 
@@ -119,7 +119,6 @@ Astronomers use Kepler's Third Law to detect and study exoplanets. By measuring 
 
 ## **4. Computational Modeling: Python Simulation**
 
-The following Python code simulates Kepler's Third Law by calculating orbital periods for different radii and verifying the $$T^2 \propto R^3$$ relationship.
 
 ```python
 import numpy as np
@@ -151,17 +150,13 @@ plt.show()
 ## **5. Results and Observations**
 
 ### **5.1 Simulation Results**
-- The plot of $$T^2$$ vs $$R^3$$ shows a straight line, confirming the proportionality predicted by Kepler's Third Law.
+- The plot of $T^2$ vs $R^3$ shows a straight line, confirming the proportionality predicted by Kepler's Third Law.
 - This verifies that the square of the orbital period is directly proportional to the cube of the orbital radius.
 
 ### **5.2 Key Takeaways**
 - Kepler's Third Law applies universally to any object in a circular orbit, whether it's a planet, satellite, or exoplanet.
-- The relationship $$T^2 \propto R^3$$ allows us to calculate unknown masses or orbital parameters in astrophysical systems.
+- The relationship $T^2 \propto R^3$ allows us to calculate unknown masses or orbital parameters in astrophysical systems.
 
 ---
 
-## **6. Conclusion**
 
-Kepler's Third Law is a cornerstone of celestial mechanics, linking orbital periods and radii through gravitational theory. By deriving the law mathematically and verifying it computationally, we gain a deeper understanding of planetary motion and its applications in astronomy and engineering.
-
-This document demonstrates the power of combining theoretical physics with computational tools to explore and validate fundamental laws of nature.
