@@ -8,7 +8,7 @@ Monte Carlo methods are a class of computational algorithms that rely on repeate
 
 ---
 
-## Part 1: Estimating π Using a Unit Circle
+##  Estimating π Using a Unit Circle
 
 ### Theoretical Foundation
 
@@ -130,7 +130,7 @@ plt.show()
 
 ### Theoretical Foundation
 
-Buffon's Needle is one of the oldest problems in geometric probability. Imagine a needle of length \( L \) dropped onto a floor with parallel lines distance \( D \) apart (where \( L \leq D \)).
+Buffon's Needle is one of the oldest problems in geometric probability. Imagine a needle of length \( L \) dropped onto a floor with parallel lines distance \( D \) apart (where $L \leq D$).
 
 The probability that the needle crosses a line is:
 
@@ -256,9 +256,4 @@ plt.show()
 
 ---
 
-## Conclusion
-
-Both methods demonstrate how randomness can be harnessed to estimate deterministic quantities like π. The circle method is generally preferred for practical π estimation due to its simplicity and faster convergence. Buffon's Needle, while historically significant and conceptually interesting, is less efficient.
-
-Monte Carlo methods teach us valuable lessons about probability, statistics, and computational mathematics. They show how repeated random experiments can reveal fundamental mathematical truths, and how increasing sample sizes lead to more precise estimates.
 
