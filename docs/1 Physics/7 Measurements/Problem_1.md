@@ -280,22 +280,3 @@ plt.show()
 
 ---
 
-## 8. Practical Recommendations and Conclusion
-
-### Before measurement:
-- Calibrate instruments
-- Understand the measurement method thoroughly
-- Control or record environmental factors
-
-### During measurement:
-- Take multiple measurements
-- Note potential systematic error sources
-- Don't discard unexpected results without investigation
-
-### Data analysis:
-- Calculate uncertainties correctly
-- Use appropriate statistical methods
-- Report results clearly and transparently
-
-Understanding and properly reporting measurement uncertainties is critical for the reliability of scientific work. By properly managing these uncertainties, we can obtain more reliable results and contribute to scientific progress.
-
