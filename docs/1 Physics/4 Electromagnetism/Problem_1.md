@@ -10,11 +10,11 @@ $$
 $$
 
 Where:
-- $$\vec{F}$$: Lorentz force (N), representing the total electromagnetic force on the charged particle (measured in Newtons).
-- $$q$$: Charge of the particle (C), indicating the magnitude and sign of the electric charge (measured in Coulombs).
-- $$\vec{E}$$: Electric field (V/m), representing the force per unit charge due to electric potential differences (measured in Volts per meter).
-- $$\vec{B}$$: Magnetic field (T), representing the magnetic influence on moving electric charges (measured in Teslas).
-- $$\vec{v}$$: Velocity of the particle (m/s), indicating the speed and direction of the particle's motion (measured in meters per second).
+- $\vec{F}$: Lorentz force (N), representing the total electromagnetic force on the charged particle (measured in Newtons).
+- $q$: Charge of the particle (C), indicating the magnitude and sign of the electric charge (measured in Coulombs).
+- $\vec{E}$: Electric field (V/m), representing the force per unit charge due to electric potential differences (measured in Volts per meter).
+- $\vec{B}$: Magnetic field (T), representing the magnetic influence on moving electric charges (measured in Teslas).
+- $\vec{v}$: Velocity of the particle (m/s), indicating the speed and direction of the particle's motion (measured in meters per second).
 
 This force governs the motion of charged particles in systems such as particle accelerators, mass spectrometers, and plasma confinement devices. By simulating the trajectories of particles under the influence of the Lorentz force, we can gain insights into its applications and visualize the complex dynamics it produces. The simulation will allow us to explore how different field configurations and initial conditions affect the particle's path, providing a deeper understanding of electromagnetic phenomena.
 
@@ -27,8 +27,8 @@ This force governs the motion of charged particles in systems such as particle a
 - The Lorentz force is precisely controlled to maintain the particles within the accelerator's beam path, enabling high-energy collisions for fundamental physics research.
 
 ### **2. Mass Spectrometers**
-- Charged particles are deflected by magnetic fields based on their mass-to-charge ratio ($$m/q$$), enabling the identification of chemical compounds.
-- The Lorentz force acts as a "selector," allowing only particles with specific $$m/q$$ values to reach the detector, thus enabling accurate mass analysis.
+- Charged particles are deflected by magnetic fields based on their mass-to-charge ratio ($m/q$), enabling the identification of chemical compounds.
+- The Lorentz force acts as a "selector," allowing only particles with specific $m/q$ values to reach the detector, thus enabling accurate mass analysis.
 
 ### **3. Plasma Confinement**
 - In fusion reactors, magnetic fields confine plasma (a hot, ionized gas) to prevent it from coming into contact with reactor walls.
@@ -62,11 +62,8 @@ These equations describe how the velocity and position of the particle evolve ov
 
 ---
 
-### **Python Code for Simulation**
 
-Below are several Python scripts to simulate and visualize the motion of a charged particle under different field configurations.
-
-#### **Simulation 1: Uniform Magnetic Field**
+#### **Simulation: Uniform Magnetic Field**
 
 ```python
 import numpy as np
