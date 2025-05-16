@@ -50,19 +50,34 @@ Projectile motion occurs when an object is launched with an initial velocity $$v
 
 ### How Does the Range Depend on the Angle of Projection?
 
-The range $$R$$ depends on:
-- **Initial Velocity ($$v_0$$)**: The range increases quadratically with $$v_0$$ ($$R \propto v_0^2$$).
-- **Angle of Projection ($$\theta$$)**: The range is maximized at $$\theta = 45^\circ$$.
-- **Gravitational Acceleration ($$g$$)**: The range decreases as $$g$$ increases ($$R \propto 1/g$$).
+TThe range $R$ depends on:
+
+1. **Initial velocity ($v_0$)**  
+   - Quadratic dependence:  
+     $$
+     R \propto v_0^2
+     $$
+
+2. **Projection angle ($\theta$)**  
+   - Maximum at $45^\circ$:  
+     $$
+     R = \frac{v_0^2 \sin(2\theta)}{g}
+     $$
+
+3. **Gravity ($g$)**  
+   - Inversely proportional:  
+     $$
+     R \propto \frac{1}{g}
+     $$
 
 ### Key Observations
-1. The range is symmetric:
+1. The range is symmetric:  
    $$
    R(\theta) = R(90^\circ - \theta)
    $$
-   For example, the range at $$\theta = 30^\circ$$ is the same as at $$\theta = 60^\circ$$.
+   For example, the range at $\theta = 30^\circ$ is the same as at $\theta = 60^\circ$.
 
-2. The maximum range occurs at $$\theta = 45^\circ$$ for flat terrain.
+2. The maximum range occurs at $\theta = 45^\circ$ for flat terrain.
 
 ---
 
@@ -73,7 +88,7 @@ The range $$R$$ depends on:
 Projectile motion has numerous real-world applications across various fields:
 
 - **Sports**:  
-  In sports like soccer and golf, players adjust the angle of projection ($$\theta$$) and the initial velocity ($$v_0$$) to achieve optimal range or height. For example:
+  In sports like soccer and golf, players adjust the angle of projection ($\theta$) and the initial velocity ($v_0$) to achieve optimal range or height. For example:
   - A soccer player might aim for a higher angle to clear a wall of defenders.
   - A golfer adjusts the angle and velocity to maximize the distance of a drive.
 
@@ -89,7 +104,7 @@ Projectile motion has numerous real-world applications across various fields:
 
 ### Trajectory Example
 
-The trajectory for an object launched with an initial velocity of $$v_0 = 20 \, \text{m/s}$$ at an angle of $$\theta = 45^\circ$$ 
+The trajectory for an object launched with an initial velocity of $v_0 = 20\,\text{m/s}$ at an angle of $\theta = 45^\circ$
 
 
 
