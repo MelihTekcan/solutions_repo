@@ -2,7 +2,7 @@
 
 ## **Introduction**
 
-Wave motion is a fundamental concept in physics that describes how energy is transferred through a medium without the transport of matter. Waves are all around us—whether it’s the sound we hear, the light we see, or the ripples on a pond. This problem focuses on understanding the basic principles of wave motion, including the mathematical description of waves, their properties, and their behavior in different scenarios.
+Wave motion is a fundamental concept in physics that describes how energy is transferred through a medium without the transport of matter. Waves are all around us whether it’s the sound we hear, the light we see, or the ripples on a pond. This problem focuses on understanding the basic principles of wave motion, including the mathematical description of waves, their properties, and their behavior in different scenarios.
 
 ---
 
@@ -19,21 +19,21 @@ A wave is a disturbance that travels through a medium, transferring energy from 
 
 To understand wave motion, we need to define some key properties:
 
-1. **Wavelength ($$\lambda$$)**: The distance between two consecutive points in phase on a wave (e.g., crest to crest or trough to trough). Measured in meters (m).
+1. **Wavelength ($\lambda$)**: The distance between two consecutive points in phase on a wave (e.g., crest to crest or trough to trough). Measured in meters (m).
 
-2. **Frequency ($$f$$)**: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).
+2. **Frequency ($f$$)**: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).
 
-3. **Period ($$T$$)**: The time it takes for one complete wave cycle to pass a point. Related to frequency by:
+3. **Period ($T$)**: The time it takes for one complete wave cycle to pass a point. Related to frequency by:
    $$
    T = \frac{1}{f}
    $$
 
-4. **Wave Speed ($$v$$)**: The speed at which the wave propagates through the medium. Related to wavelength and frequency by:
+4. **Wave Speed ($v$$)**: The speed at which the wave propagates through the medium. Related to wavelength and frequency by:
    $$
    v = f \lambda
    $$
 
-5. **Amplitude ($$A$$)**: The maximum displacement of the wave from its equilibrium position. Determines the wave’s energy.
+5. **Amplitude ($A$)**: The maximum displacement of the wave from its equilibrium position. Determines the wave’s energy.
 
 ---
 
@@ -65,7 +65,6 @@ Where:
 
 ## **Wave Simulation Using Python**
 
-To visualize wave motion, we can use Python to simulate the propagation of a wave. Below is the code to create an animated wave:
 
 ```python
 import numpy as np
@@ -112,6 +111,3 @@ plt.show()
 
 ---
 
-## **Conclusion**
-
-This problem demonstrates how to analyze a wave using its mathematical description. By identifying key properties such as amplitude, wavelength, frequency, and speed, we gain a deeper understanding of wave behavior. These principles are not only essential in physics but also have wide-ranging applications in technology, medicine, and engineering. Additionally, the Python simulation provides a visual representation of wave propagation, enhancing our comprehension of wave motion.
