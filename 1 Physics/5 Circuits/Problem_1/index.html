@@ -336,19 +336,7 @@ def visualize_circuit(graph, title="Circuit Diagram", pos=None):
     return pos  # Return the layout for consistent visualization
 
 def simulate_circuit(graph, input_node, output_node, voltage_source):
-    """
-    Simulates the circuit to calculate currents and voltages using linear equations.
 
-    Parameters:
-    - graph (nx.Graph): A networkx graph representing the circuit.
-      Nodes are junctions, and edges are resistors with 'resistance' attribute.
-    - input_node (str): The starting node for voltage source.
-    - output_node (str): The ending node for voltage source (ground).
-    - voltage_source (float): Voltage of the source.
-
-    Returns:
-    - dict: Dictionary of node voltages and edge currents.
-    """
 
     # Create the admittance matrix and source vector
     num_nodes = len(graph.nodes)
@@ -399,9 +387,7 @@ def simulate_circuit(graph, input_node, output_node, voltage_source):
     return node_voltages, edge_currents
 
 def display_simulation_results(graph, node_voltages, edge_currents, pos):
-    """
-    Displays the simulation results on the circuit diagram.
-    """
+
     if node_voltages is None:
         return
 
