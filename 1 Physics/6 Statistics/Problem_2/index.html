@@ -90,7 +90,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#part-1-estimating-using-a-unit-circle">Part 1: Estimating π Using a Unit Circle</a>
+<li class="toctree-l3"><a class="reference internal" href="#estimating-using-a-unit-circle">Estimating π Using a Unit Circle</a>
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#theoretical-foundation">Theoretical Foundation</a>
 </li>
@@ -115,8 +115,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#method-comparison">Method Comparison</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
 </li>
 </ul>
 </li>
@@ -208,7 +206,7 @@
 <h2 id="introduction">Introduction</h2>
 <p>Monte Carlo methods are a class of computational algorithms that rely on repeated random sampling to obtain numerical results. In this article, we'll explore two fascinating ways to estimate the value of π using these methods: the circle-based approach and Buffon's Needle experiment.</p>
 <hr/>
-<h2 id="part-1-estimating-using-a-unit-circle">Part 1: Estimating π Using a Unit Circle</h2>
+<h2 id="estimating-using-a-unit-circle">Estimating π Using a Unit Circle</h2>
 <h3 id="theoretical-foundation">Theoretical Foundation</h3>
 <p>Imagine a unit circle (radius = 1) inscribed inside a square with side length 2. The area of the circle is:</p>
 <div class="arithmatex">\[
@@ -304,7 +302,7 @@ plt.show()
 <hr/>
 <h2 id="part-2-estimating-using-buffons-needle">Part 2: Estimating π Using Buffon's Needle</h2>
 <h3 id="theoretical-foundation_1">Theoretical Foundation</h3>
-<p>Buffon's Needle is one of the oldest problems in geometric probability. Imagine a needle of length <span class="arithmatex">\( L \)</span> dropped onto a floor with parallel lines distance <span class="arithmatex">\( D \)</span> apart (where <span class="arithmatex">\( L \leq D \)</span>).</p>
+<p>Buffon's Needle is one of the oldest problems in geometric probability. Imagine a needle of length <span class="arithmatex">\( L \)</span> dropped onto a floor with parallel lines distance <span class="arithmatex">\( D \)</span> apart (where <span class="arithmatex">\(L \leq D\)</span>).</p>
 <p>The probability that the needle crosses a line is:</p>
 <div class="arithmatex">\[
 P(\text{cross}) = \frac{2L}{\pi D}
@@ -436,9 +434,6 @@ plt.show()
 </tbody>
 </table>
 <hr/>
-<h2 id="conclusion">Conclusion</h2>
-<p>Both methods demonstrate how randomness can be harnessed to estimate deterministic quantities like π. The circle method is generally preferred for practical π estimation due to its simplicity and faster convergence. Buffon's Needle, while historically significant and conceptually interesting, is less efficient.</p>
-<p>Monte Carlo methods teach us valuable lessons about probability, statistics, and computational mathematics. They show how repeated random experiments can reveal fundamental mathematical truths, and how increasing sample sizes lead to more precise estimates.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
