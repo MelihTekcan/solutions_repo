@@ -74,7 +74,7 @@ $$
 T^2 = \frac{4 \pi^2}{G M} R^3
 $$
 
-This is the mathematical expression of **Kepler's Third Law**. The term $$\frac{4 \pi^2}{G M}$$ is a constant for a given central body (e.g., the Sun or Earth).
+This is the mathematical expression of **Kepler's Third Law**. The term $\frac{4 \pi^2}{G M}$ is a constant for a given central body (e.g., the Sun or Earth).
 
 ---
 
