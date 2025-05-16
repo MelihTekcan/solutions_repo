@@ -49,7 +49,7 @@ G \frac{M m}{R^2} = m \frac{v^2}{R}
 $$
 
 #### **Step 2: Relate Orbital Velocity to Period**
-The orbital velocity $$v$$ is related to the orbital period $$T$$ by the formula:
+The orbital velocity $$v$$ is related to the orbital period $T$ by the formula:
 
 $$
 v = \frac{\text{Circumference}}{\text{Period}} = \frac{2 \pi R}{T}
