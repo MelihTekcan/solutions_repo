@@ -21,6 +21,7 @@ This report analyzes the trajectories of a payload released from a rocket near E
 **Python Implementation:**
 
 ```python
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
@@ -93,3 +94,4 @@ def simulate_trajectories():
 
 simulate_trajectories()
 
+```
