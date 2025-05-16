@@ -78,8 +78,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#wave-simulation-using-python">Wave Simulation Using Python</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -187,7 +185,7 @@
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
 <h2 id="introduction"><strong>Introduction</strong></h2>
-<p>Wave motion is a fundamental concept in physics that describes how energy is transferred through a medium without the transport of matter. Waves are all around us—whether it’s the sound we hear, the light we see, or the ripples on a pond. This problem focuses on understanding the basic principles of wave motion, including the mathematical description of waves, their properties, and their behavior in different scenarios.</p>
+<p>Wave motion is a fundamental concept in physics that describes how energy is transferred through a medium without the transport of matter. Waves are all around us whether it’s the sound we hear, the light we see, or the ripples on a pond. This problem focuses on understanding the basic principles of wave motion, including the mathematical description of waves, their properties, and their behavior in different scenarios.</p>
 <hr/>
 <h2 id="what-is-a-wave"><strong>What is a Wave?</strong></h2>
 <p>A wave is a disturbance that travels through a medium, transferring energy from one point to another. Waves can be classified into two main types:</p>
@@ -200,25 +198,25 @@
 <p>To understand wave motion, we need to define some key properties:</p>
 <ol>
 <li>
-<p><strong>Wavelength (<span class="arithmatex">(<span class="arithmatex">\(\lambda\)</span>\)</span>)</strong>: The distance between two consecutive points in phase on a wave (e.g., crest to crest or trough to trough). Measured in meters (m).</p>
+<p><strong>Wavelength (<span class="arithmatex">\(\lambda\)</span>)</strong>: The distance between two consecutive points in phase on a wave (e.g., crest to crest or trough to trough). Measured in meters (m).</p>
 </li>
 <li>
-<p><strong>Frequency (<span class="arithmatex">(<span class="arithmatex">\(f\)</span>\)</span>)</strong>: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).</p>
+<p><strong>Frequency (<span class="arithmatex">\(f\)</span>$)</strong>: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).</p>
 </li>
 <li>
-<p><strong>Period (<span class="arithmatex">(<span class="arithmatex">\(T\)</span>\)</span>)</strong>: The time it takes for one complete wave cycle to pass a point. Related to frequency by:
+<p><strong>Period (<span class="arithmatex">\(T\)</span>)</strong>: The time it takes for one complete wave cycle to pass a point. Related to frequency by:
    $$
    T = \frac{1}{f}
    $$</p>
 </li>
 <li>
-<p><strong>Wave Speed (<span class="arithmatex">(<span class="arithmatex">\(v\)</span>\)</span>)</strong>: The speed at which the wave propagates through the medium. Related to wavelength and frequency by:
+<p><strong>Wave Speed (<span class="arithmatex">\(v\)</span>$)</strong>: The speed at which the wave propagates through the medium. Related to wavelength and frequency by:
    $$
    v = f \lambda
    $$</p>
 </li>
 <li>
-<p><strong>Amplitude (<span class="arithmatex">(<span class="arithmatex">\(A\)</span>\)</span>)</strong>: The maximum displacement of the wave from its equilibrium position. Determines the wave’s energy.</p>
+<p><strong>Amplitude (<span class="arithmatex">\(A\)</span>)</strong>: The maximum displacement of the wave from its equilibrium position. Determines the wave’s energy.</p>
 </li>
 </ol>
 <hr/>
@@ -243,7 +241,6 @@ y(x, t) = A \sin(kx - \omega t + \phi)
 </ol>
 <hr/>
 <h2 id="wave-simulation-using-python"><strong>Wave Simulation Using Python</strong></h2>
-<p>To visualize wave motion, we can use Python to simulate the propagation of a wave. Below is the code to create an animated wave:</p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -286,8 +283,6 @@ ani = FuncAnimation(fig, update, frames=len(t), interval=50, blit=True)
 plt.show()
 </code></pre>
 <hr/>
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>This problem demonstrates how to analyze a wave using its mathematical description. By identifying key properties such as amplitude, wavelength, frequency, and speed, we gain a deeper understanding of wave behavior. These principles are not only essential in physics but also have wide-ranging applications in technology, medicine, and engineering. Additionally, the Python simulation provides a visual representation of wave propagation, enhancing our comprehension of wave motion.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
