@@ -5,18 +5,18 @@ This report analyzes the trajectories of a payload released from a rocket near E
 
 **Theoretical Background:**
 
-- **Gravitational Force:**  The motion is governed by Newton's Law of Universal Gravitation: $$F = \frac{G M m}{r^2}$$, where:
+- **Gravitational Force:**  The motion is governed by Newton's Law of Universal Gravitation: $F = \frac{G M m}{r^2}$, where:
     -  \(G\) is the gravitational constant.
     -  \(M\) is Earth's mass.
     -  \(m\) is the payload's mass.
     -  \(r\) is the distance between Earth and the payload.
 - **Equations of Motion:** To model the motion, we use a 2D Cartesian coordinate system, resulting in:
-    $$\ddot{x} = -\frac{G M x}{r^3}, \quad \ddot{y} = -\frac{G M y}{r^3}$$
-- **Trajectory Types:** Determined by the specific mechanical energy: $$\epsilon = \frac{v^2}{2} - \frac{G M}{r}$$
-    - Elliptical (\(\epsilon < 0\)): Closed orbit.
-    - Parabolic (\(\epsilon = 0\)): Escape threshold.
-    - Hyperbolic (\(\epsilon > 0\)): Escape trajectory.
-- **Escape Velocity:** The minimum speed to escape Earth's gravity: $$v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}$$ (approximately 11.2 km/s at 200 km altitude).
+    $\ddot{x} = -\frac{G M x}{r^3}, \quad \ddot{y} = -\frac{G M y}{r^3}$
+- **Trajectory Types:** Determined by the specific mechanical energy: $\epsilon = \frac{v^2}{2} - \frac{G M}{r}$
+    - Elliptical ($\epsilon < 0$): Closed orbit.
+    - Parabolic ($\epsilon = 0$): Escape threshold.
+    - Hyperbolic ($\epsilon > 0$): Escape trajectory.
+- **Escape Velocity:** The minimum speed to escape Earth's gravity: $v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}$ (approximately 11.2 km/s at 200 km altitude).
 
 **Python Implementation:**
 
