@@ -21,7 +21,7 @@ To understand wave motion, we need to define some key properties:
 
 1. **Wavelength ($\lambda$)**: The distance between two consecutive points in phase on a wave (e.g., crest to crest or trough to trough). Measured in meters (m).
 
-2. **Frequency ($f$$)**: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).
+2. **Frequency ($f$)**: The number of wave cycles that pass a given point per second. Measured in hertz (Hz).
 
 3. **Period ($T$)**: The time it takes for one complete wave cycle to pass a point. Related to frequency by:
    $$
