@@ -116,53 +116,60 @@ The parabolic path demonstrates the interplay between horizontal and vertical mo
 
 ## 4. Implementation
 
+## 4. Implementation
 
+<button onclick="runSimulation()">Run Simulation</button>
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
+from IPython.display import display, clear_output
+import ipywidgets as widgets
 
-# Parameters
-g = 9.8  # Acceleration due to gravity (m/s^2)
-v0_values = [10, 20, 30]  # Initial velocities (m/s)
-theta_deg = np.linspace(0, 90, 91)  # Angles from 0° to 90°
-theta_rad = np.deg2rad(theta_deg)
+def simulate_projectile():
+    # Parameters
+    g = 9.8  # Acceleration due to gravity (m/s^2)
+    v0_values = [10, 20, 30]  # Initial velocities (m/s)
+    theta_deg = np.linspace(0, 90, 91)  # Angles from 0° to 90°
+    theta_rad = np.deg2rad(theta_deg)
 
-# Range function
-def range_projectile(v0, theta, g):
-    return (v0**2 * np.sin(2 * theta)) / g
+    # Range function
+    def range_projectile(v0, theta, g):
+        return (v0**2 * np.sin(2 * theta)) / g
 
-# Compute ranges for different initial velocities
-ranges = {v0: range_projectile(v0, theta_rad, g) for v0 in v0_values}
+    # Plot settings and calculations
+    plt.figure(figsize=(12, 5))
+    
+    # First subplot: Range vs Angle
+    plt.subplot(1, 2, 1)
+    for v0 in v0_values:
+        range_values = range_projectile(v0, theta_rad, g)
+        plt.plot(theta_deg, range_values, label=f'v0 = {v0} m/s')
+    plt.xlabel('Angle (degrees)')
+    plt.ylabel('Range (m)')
+    plt.title('Range vs Angle')
+    plt.legend()
+    plt.grid(True)
 
-# Plot Range vs Angle
-plt.figure(figsize=(10, 6))
-for v0, R in ranges.items():
-    plt.plot(theta_deg, R, label=f'v0 = {v0} m/s')
-plt.xlabel('Angle of Projection (degrees)')
-plt.ylabel('Range (meters)')
-plt.title('Range vs. Angle of Projection')
-plt.legend()
-plt.grid(True)
-plt.show()
+    # Second subplot: Example Trajectory
+    plt.subplot(1, 2, 2)
+    v0 = 20
+    theta = np.deg2rad(45)
+    t_flight = 2 * v0 * np.sin(theta) / g
+    t = np.linspace(0, t_flight, 100)
+    x = v0 * np.cos(theta) * t
+    y = v0 * np.sin(theta) * t - 0.5 * g * t**2
+    plt.plot(x, y)
+    plt.xlabel('Distance (m)')
+    plt.ylabel('Height (m)')
+    plt.title('Trajectory (v0=20 m/s, θ=45°)')
+    plt.grid(True)
 
-# Trajectory for v0 = 20 m/s and θ = 45°
-v0 = 20  # Initial velocity (m/s)
-theta = np.deg2rad(45)  # Launch angle (radians)
-t_flight = (2 * v0 * np.sin(theta)) / g  # Total flight time
-t = np.linspace(0, t_flight, 100)  # Time intervals
+    plt.tight_layout()
+    plt.show()
 
-# Compute trajectory
-x = v0 * np.cos(theta) * t  # Horizontal position
-y = v0 * np.sin(theta) * t - 0.5 * g * t**2  # Vertical position
-
-# Plot trajectory
-plt.figure(figsize=(10, 6))
-plt.plot(x, y, label='Trajectory (v0 = 20 m/s, θ = 45°)')
-plt.xlabel('Horizontal Distance (m)')
-plt.ylabel('Height (m)')
-plt.title('Projectile Trajectory')
-plt.legend()
-plt.grid(True)
-plt.show()
+# Create interactive button
+button = widgets.Button(description="Run Simulation")
+button.on_click(lambda b: simulate_projectile())
+display(button)
 ```
