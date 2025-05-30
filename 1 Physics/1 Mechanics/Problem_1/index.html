@@ -73,6 +73,10 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#4-implementation">4. Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#projectile-motion-simulation">Projectile Motion Simulation</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -322,41 +326,60 @@
 - The vertical motion is accelerated due to gravity, resulting in a curved path.</p>
 <hr/>
 <h2 id="4-implementation">4. Implementation</h2>
-<details>
-<summary>Click to see simulation code</summary>
-<pre><code class="language-python">import numpy as np
+<h3 id="projectile-motion-simulation">Projectile Motion Simulation</h3>
+<pre><code class="language-python"># filepath: vscode-vfs://github/MelihTekcan/solutions_repo/docs/1%20Physics/1%20Mechanics/simulation_output.py
+import numpy as np
 import matplotlib.pyplot as plt
-from IPython.display import display
-import ipywidgets as widgets
 
-def simulate_projectile(v0=20, theta_deg=45, g=9.8):
+def plot_trajectory(v0=20, theta_deg=45, g=9.8):
+    # Convert angle to radians
     theta_rad = np.deg2rad(theta_deg)
 
-    # Calculate trajectory
+    # Calculate time of flight
     t_flight = 2 * v0 * np.sin(theta_rad) / g
     t = np.linspace(0, t_flight, 100)
+
+    # Calculate trajectory
     x = v0 * np.cos(theta_rad) * t
     y = v0 * np.sin(theta_rad) * t - 0.5 * g * t**2
 
     # Create plot
     plt.figure(figsize=(10, 6))
-    plt.plot(x, y)
-    plt.title(f'Projectile Motion (v0={v0} m/s, θ={theta_deg}°)')
+    plt.plot(x, y, 'b-', label='Trajectory')
+    plt.title(f'Projectile Motion (v₀={v0} m/s, θ={theta_deg}°)')
     plt.xlabel('Distance (m)')
     plt.ylabel('Height (m)')
     plt.grid(True)
-    plt.show()
+    plt.legend()
 
-# Create interactive widgets
-v0_slider = widgets.FloatSlider(value=20, min=5, max=50, description='Initial Velocity (m/s)')
-theta_slider = widgets.FloatSlider(value=45, min=0, max=90, description='Angle (degrees)')
-g_slider = widgets.FloatSlider(value=9.8, min=5, max=15, description='Gravity (m/s²)')
+    # Show max height and range
+    max_height = v0**2 * np.sin(theta_rad)**2 / (2*g)
+    range_distance = v0**2 * np.sin(2*theta_rad) / g
 
-# Create interactive plot
-widgets.interactive(simulate_projectile, v0=v0_slider, theta_deg=theta_slider, g=g_slider)
+    plt.annotate(f'Max Height: {max_height:.1f} m', 
+                xy=(range_distance/2, max_height),
+                xytext=(10, 10), textcoords='offset points')
+
+    plt.annotate(f'Range: {range_distance:.1f} m',
+                xy=(range_distance, 0),
+                xytext=(-10, 10), textcoords='offset points')
+
+    return plt
+
+# Generate and save the plot
+trajectory_plot = plot_trajectory()
+trajectory_plot.savefig('docs/1 Physics/1 Mechanics/projectile_motion_output.png')
+trajectory_plot.close()
 </code></pre>
-</details>
-<p><img alt="Projectile Motion Simulation Output" src="path_to_simulation_output.png"/></p>
+<p><img alt="Projectile Motion Output" src="projectile_motion_output.png"/></p>
+<p>Key Features:
+- Initial velocity: 20 m/s
+- Launch angle: 45°
+- Shows maximum height and range
+- Complete trajectory visualization</p>
+<blockquote>
+<p><strong>Note:</strong> The simulation output is generated automatically when viewing this page.</p>
+</blockquote>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
