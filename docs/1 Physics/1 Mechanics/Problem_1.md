@@ -116,60 +116,41 @@ The parabolic path demonstrates the interplay between horizontal and vertical mo
 
 ## 4. Implementation
 
-### Projectile Motion Simulation
-
 ```python
-# filepath: vscode-vfs://github/MelihTekcan/solutions_repo/docs/1%20Physics/1%20Mechanics/simulation_output.py
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_trajectory(v0=20, theta_deg=45, g=9.8):
-    # Convert angle to radians
-    theta_rad = np.deg2rad(theta_deg)
-    
-    # Calculate time of flight
-    t_flight = 2 * v0 * np.sin(theta_rad) / g
-    t = np.linspace(0, t_flight, 100)
-    
-    # Calculate trajectory
-    x = v0 * np.cos(theta_rad) * t
-    y = v0 * np.sin(theta_rad) * t - 0.5 * g * t**2
-    
-    # Create plot
-    plt.figure(figsize=(10, 6))
-    plt.plot(x, y, 'b-', label='Trajectory')
-    plt.title(f'Projectile Motion (v₀={v0} m/s, θ={theta_deg}°)')
-    plt.xlabel('Distance (m)')
-    plt.ylabel('Height (m)')
-    plt.grid(True)
-    plt.legend()
-    
-    # Show max height and range
-    max_height = v0**2 * np.sin(theta_rad)**2 / (2*g)
-    range_distance = v0**2 * np.sin(2*theta_rad) / g
-    
-    plt.annotate(f'Max Height: {max_height:.1f} m', 
-                xy=(range_distance/2, max_height),
-                xytext=(10, 10), textcoords='offset points')
-    
-    plt.annotate(f'Range: {range_distance:.1f} m',
-                xy=(range_distance, 0),
-                xytext=(-10, 10), textcoords='offset points')
-    
-    return plt
+def r1(t):
+    return np.array([t, -t**2 + t])
 
-# Generate and save the plot
-trajectory_plot = plot_trajectory()
-trajectory_plot.savefig('docs/1 Physics/1 Mechanics/projectile_motion_output.png')
-trajectory_plot.close()
+def r2(t):
+    return np.array([2 * np.cos(t), 2 * np.sin(t)])
+
+# Define the time ranges
+t1 = np.linspace(0, 2, 100)
+t2 = np.linspace(0, 2 * np.pi, 100)
+
+# Create a side-by-side plot layout
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))  # One row, two columns
+
+# First plot
+axes[0].plot(r1(t1)[0], r1(t1)[1])
+axes[0].set_xlabel('x')
+axes[0].set_ylabel('y')
+axes[0].set_title('Plot 1: r1(t)')
+
+# Second plot
+axes[1].plot(r2(t2)[0], r2(t2)[1])
+axes[1].set_xlabel('x')
+axes[1].set_ylabel('y')
+axes[1].set_title('Plot 2: r2(t)')
+
+# Adjust aspect ratios if needed
+axes[0].set_aspect('equal', 'box')
+axes[1].set_aspect('equal', 'box')
+
+# Optimize layout
+plt.tight_layout()
+plt.show()
 ```
 
-![Projectile Motion Output](projectile_motion_output.png)
-
-Key Features:
-- Initial velocity: 20 m/s
-- Launch angle: 45°
-- Shows maximum height and range
-- Complete trajectory visualization
-
-> **Note:** The simulation output is generated automatically when viewing this page.
