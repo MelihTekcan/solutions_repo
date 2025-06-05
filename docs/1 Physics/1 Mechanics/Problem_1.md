@@ -120,37 +120,38 @@ The parabolic path demonstrates the interplay between horizontal and vertical mo
 import numpy as np
 import matplotlib.pyplot as plt
 
-def r1(t):
-    return np.array([t, -t**2 + t])
+def plot_projectile_motion():
+    # Parameters
+    v0 = 20  # Initial velocity (m/s)
+    theta = 45  # Angle (degrees)
+    g = 9.8  # Gravity (m/s²)
+    
+    # Time of flight
+    t_max = 2 * v0 * np.sin(np.deg2rad(theta)) / g
+    t = np.linspace(0, t_max, 100)
+    
+    # Calculate x and y positions
+    x = v0 * np.cos(np.deg2rad(theta)) * t
+    y = v0 * np.sin(np.deg2rad(theta)) * t - 0.5 * g * t**2
+    
+    # Create plot
+    plt.figure(figsize=(10, 6))
+    plt.plot(x, y, 'b-', label='Trajectory')
+    plt.title(f'Projectile Motion (v₀={v0} m/s, θ={theta}°)')
+    plt.xlabel('Distance (m)')
+    plt.ylabel('Height (m)')
+    plt.grid(True)
+    plt.legend()
+    
+    # Save plot
+    plt.savefig('projectile_motion.png')
+    plt.close()
 
-def r2(t):
-    return np.array([2 * np.cos(t), 2 * np.sin(t)])
-
-# Define the time ranges
-t1 = np.linspace(0, 2, 100)
-t2 = np.linspace(0, 2 * np.pi, 100)
-
-# Create a side-by-side plot layout
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))  # One row, two columns
-
-# First plot
-axes[0].plot(r1(t1)[0], r1(t1)[1])
-axes[0].set_xlabel('x')
-axes[0].set_ylabel('y')
-axes[0].set_title('Plot 1: r1(t)')
-
-# Second plot
-axes[1].plot(r2(t2)[0], r2(t2)[1])
-axes[1].set_xlabel('x')
-axes[1].set_ylabel('y')
-axes[1].set_title('Plot 2: r2(t)')
-
-# Adjust aspect ratios if needed
-axes[0].set_aspect('equal', 'box')
-axes[1].set_aspect('equal', 'box')
-
-# Optimize layout
-plt.tight_layout()
-plt.show()
+# Generate the plot
+plot_projectile_motion()
 ```
+
+**Output:**
+
+![Projectile Motion](projectile_motion.png)
 
