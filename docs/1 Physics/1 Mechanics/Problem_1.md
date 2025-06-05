@@ -153,5 +153,5 @@ plot_projectile_motion()
 
 **Output:**
 
-![Projectile Motion](projectile_motion.png)
+[](projectile_motion.png)
 
